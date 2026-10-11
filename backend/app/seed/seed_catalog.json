@@ -1,0 +1,976 @@
+[
+  {
+    "slug": "audacity",
+    "name": "Audacity",
+    "summary": "Free, open source, cross-platform audio software for multi-track recording and editing.",
+    "description": "Audacity is an easy-to-use, multi-track audio editor and recorder for Windows, macOS, GNU/Linux and other operating systems. It supports high quality 32-bit float audio, real-time effects preview, spectral selection, and noise removal filters.",
+    "homepage_url": "https://www.audacityteam.org/",
+    "repo_url": "https://github.com/audacity/audacity",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "GPL-3.0-or-later",
+    "primary_category_slug": "audio-editor",
+    "additional_category_slugs": ["media-player"],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "multi-track sound recording", "detail": "Record live audio through a microphone or mixer."},
+      {"capability": "audio waveform editing", "detail": "Cut, copy, splice and mix sounds together."},
+      {"capability": "spectral frequency analysis", "detail": "Spectrogram view modes for visualizing and selecting frequencies."},
+      {"capability": "noise reduction and filtering", "detail": "Eliminate background hiss, hum, and buzz from audio tracks."},
+      {"capability": "format export and conversion", "detail": "Export recordings in WAV, AIFF, MP3, AU, FLAC and Ogg Vorbis formats."}
+    ],
+    "releases": [{"tag_name": "v3.4.2", "name": "Audacity 3.4.2", "published_at": "2023-11-16T12:00:00Z", "release_url": "https://github.com/audacity/audacity/releases/tag/v3.4.2", "is_prerelease": false, "assets": [{"name": "audacity-win-3.4.2-64bit.exe", "download_url": "https://github.com/audacity/audacity/releases/download/v3.4.2/audacity-win-3.4.2-64bit.exe", "size_bytes": 15309208}]}]
+  },
+  {
+    "slug": "vlc",
+    "name": "VLC media player",
+    "summary": "Free and open-source cross-platform multimedia player and streaming engine.",
+    "description": "VLC is a free and open source cross-platform multimedia player and framework that plays most multimedia files as well as DVDs, Audio CDs, VCDs, and various streaming protocols. Plays everything - Files, Discs, Webcams, Devices and Streams.",
+    "homepage_url": "https://www.videolan.org/vlc/",
+    "repo_url": "https://code.videolan.org/videolan/vlc",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "GPL-2.0-or-later",
+    "primary_category_slug": "media-player",
+    "additional_category_slugs": ["audio-editor"],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "media playback", "detail": "Plays all formats without codec packs needed: MPEG-2, MPEG-4, H.264, MKV, WebM, WMV, MP3."},
+      {"capability": "video streaming", "detail": "Stream video and audio over HTTP, RTP, RTSP, MMS protocols."},
+      {"capability": "subtitle synchronization", "detail": "Load and synchronize external subtitles in SRT, ASS, and SSA formats."},
+      {"capability": "audio decoding and equalizer", "detail": "10-band audio graphic equalizer, spatializer, and volume normalizer."},
+      {"capability": "format conversion", "detail": "Transcode media files between various container formats and codecs."}
+    ],
+    "releases": [{"tag_name": "3.0.20", "name": "VLC 3.0.20 Vetinari", "published_at": "2023-11-01T10:00:00Z", "release_url": "https://www.videolan.org/vlc/releases/3.0.20.html", "is_prerelease": false, "assets": [{"name": "vlc-3.0.20-win64.exe", "download_url": "https://get.videolan.org/vlc/3.0.20/win64/vlc-3.0.20-win64.exe", "size_bytes": 42500000}]}]
+  },
+  {
+    "slug": "obs-studio",
+    "name": "OBS Studio",
+    "summary": "Free and open source software for video recording and live streaming.",
+    "description": "OBS (Open Broadcaster Software) Studio is free and open source software for video recording and live streaming. Stream to Twitch, YouTube and many other providers or record your own videos with high quality H264/AAC encoding.",
+    "homepage_url": "https://obsproject.com/",
+    "repo_url": "https://github.com/obsproject/obs-studio",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "GPL-2.0-or-later",
+    "primary_category_slug": "video-recording",
+    "additional_category_slugs": [],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "live streaming", "detail": "Broadcast live video streams to Twitch, YouTube, Kick, and custom RTMP destinations."},
+      {"capability": "screen capture", "detail": "Real-time high performance video and audio capturing from monitors, windows, or capture cards."},
+      {"capability": "scene composition", "detail": "Create scenes made up of multiple sources including window captures, images, text, and browser windows."},
+      {"capability": "audio mixing", "detail": "Intuitive audio mixer with per-source filters such as noise gate, noise suppression, and gain."},
+      {"capability": "hardware encoding", "detail": "Hardware-accelerated encoding using NVIDIA NVENC, AMD AMF, and Intel QuickSync."}
+    ],
+    "releases": [{"tag_name": "30.0.2", "name": "OBS Studio 30.0.2", "published_at": "2023-12-10T14:00:00Z", "release_url": "https://github.com/obsproject/obs-studio/releases/tag/30.0.2", "is_prerelease": false, "assets": [{"name": "OBS-Studio-30.0.2-Full-Installer-x64.exe", "download_url": "https://github.com/obsproject/obs-studio/releases/download/30.0.2/OBS-Studio-30.0.2-Full-Installer-x64.exe", "size_bytes": 133400000}]}]
+  },
+  {
+    "slug": "gimp",
+    "name": "GIMP",
+    "summary": "GNU Image Manipulation Program for photo retouching, image composition and authoring.",
+    "description": "GIMP is a cross-platform image editor available for GNU/Linux, macOS, Windows and more operating systems. Whether you are a graphic designer, photographer, illustrator, or scientist, GIMP provides you with sophisticated tools to get your job done.",
+    "homepage_url": "https://www.gimp.org/",
+    "repo_url": "https://gitlab.gnome.org/GNOME/gimp",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "GPL-3.0-or-later",
+    "primary_category_slug": "image-editor",
+    "additional_category_slugs": ["photo-management"],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "photo retouching", "detail": "Advanced retouching techniques including clone, healing, and perspective clone tools."},
+      {"capability": "image authoring", "detail": "Full suite of painting tools including brush, pencil, airbrush, and blend tools."},
+      {"capability": "layer management", "detail": "Full layer, channel, and mask support with blend modes and opacity control."},
+      {"capability": "color grading", "detail": "Curves, levels, color balance, hue-saturation, and high-bit-depth color precision up to 32-bit float."},
+      {"capability": "raw photo import", "detail": "Integration with Darktable and RawTherapee for importing RAW digital camera files."}
+    ],
+    "releases": [{"tag_name": "GIMP_2_10_36", "name": "GIMP 2.10.36", "published_at": "2023-11-07T16:00:00Z", "release_url": "https://www.gimp.org/release-notes/gimp-2.10.html", "is_prerelease": false, "assets": [{"name": "gimp-2.10.36-setup.exe", "download_url": "https://download.gimp.org/gimp/v2.10/windows/gimp-2.10.36-setup.exe", "size_bytes": 310000000}]}]
+  },
+  {
+    "slug": "bleachbit",
+    "name": "BleachBit",
+    "summary": "Free disk space cleaner, privacy manager, and system optimizer.",
+    "description": "BleachBit quickly frees disk space and tirelessly guards your privacy. Cleans cache, deletes cookies, clears Internet history, shreds temporary files, deletes logs, and discards junk you didn't know was there. Designed for Linux and Windows systems.",
+    "homepage_url": "https://www.bleachbit.org/",
+    "repo_url": "https://github.com/bleachbit/bleachbit",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "GPL-3.0-or-later",
+    "primary_category_slug": "cleanup-utility",
+    "additional_category_slugs": ["duplicate-finder"],
+    "platforms": ["windows", "linux"],
+    "capabilities": [
+      {"capability": "disk space cleanup", "detail": "Frees up gigabytes of disk space by removing caches, logs, crash dumps, and temp files."},
+      {"capability": "file shredding", "detail": "Securely shreds files to prevent recovery and hide their contents."},
+      {"capability": "cache cleaning", "detail": "Cleans caches and cookies from Firefox, Chrome, Edge, Safari, and dozens of applications."},
+      {"capability": "free space wiping", "detail": "Overwrites free disk space to hide previously deleted files and data remnants."},
+      {"capability": "privacy cleaning", "detail": "Clears MRU lists, recent document history, bash history, and search histories."}
+    ],
+    "releases": [{"tag_name": "v4.6.0", "name": "BleachBit 4.6.0", "published_at": "2023-10-15T18:00:00Z", "release_url": "https://github.com/bleachbit/bleachbit/releases/tag/v4.6.0", "is_prerelease": false, "assets": [{"name": "BleachBit-4.6.0-setup.exe", "download_url": "https://download.bleachbit.org/BleachBit-4.6.0-setup.exe", "size_bytes": 14200000}]}]
+  },
+  {
+    "slug": "kopia",
+    "name": "Kopia",
+    "summary": "Fast and secure open-source backup tool with client-side encryption and deduplication.",
+    "description": "Kopia is a simple, fast and secure open-source backup tool for Windows, macOS and Linux with fast client-side deduplication, compression, and end-to-end encryption. Works with cloud providers (S3, B2, Azure, GCS) or local disks.",
+    "homepage_url": "https://kopia.io/",
+    "repo_url": "https://github.com/kopia/kopia",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "Apache-2.0",
+    "primary_category_slug": "backup",
+    "additional_category_slugs": ["cleanup-utility"],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "data backup", "detail": "Creates point-in-time snapshot backups of directories and file systems."},
+      {"capability": "client-side encryption", "detail": "Encrypts all snapshot blocks before leaving machine using AES-256 or ChaCha20."},
+      {"capability": "content deduplication", "detail": "Deduplicates file chunks across snapshots so unchanged files consume zero extra storage."},
+      {"capability": "cloud storage synchronization", "detail": "Supports AWS S3, Google Cloud Storage, Backblaze B2, Azure Blob, WebDAV, SFTP, and local disks."},
+      {"capability": "snapshot scheduling", "detail": "Automated snapshot scheduling with configurable retention policies."}
+    ],
+    "releases": [{"tag_name": "v0.15.0", "name": "Kopia v0.15.0", "published_at": "2023-11-20T11:00:00Z", "release_url": "https://github.com/kopia/kopia/releases/tag/v0.15.0", "is_prerelease": false, "assets": [{"name": "KopiaUI-Setup-0.15.0.exe", "download_url": "https://github.com/kopia/kopia/releases/download/v0.15.0/KopiaUI-Setup-0.15.0.exe", "size_bytes": 95400000}]}]
+  },
+  {
+    "slug": "czkawka",
+    "name": "Czkawka",
+    "summary": "Multi-functional, fast duplicate file finder and disk space cleaner.",
+    "description": "Czkawka is a simple, fast and free app written in Rust to remove unnecessary files from your computer: duplicate files, empty folders, big files, empty files, temporary files, similar images, similar videos, same music, invalid symlinks, and broken files.",
+    "homepage_url": "https://github.com/qarmin/czkawka",
+    "repo_url": "https://github.com/qarmin/czkawka",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "MIT",
+    "primary_category_slug": "duplicate-finder",
+    "additional_category_slugs": ["cleanup-utility"],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "duplicate file detection", "detail": "Finds duplicates based on file size, hash (Blake3, SHA256), and byte-by-byte comparison."},
+      {"capability": "similar image finding", "detail": "Detects images that are visually similar even if resized or compressed using perceptual hashing."},
+      {"capability": "duplicate audio detection", "detail": "Detects duplicate music tracks and audio files based on acoustic fingerprints and audio tags."},
+      {"capability": "empty folder cleanup", "detail": "Recursively scans and removes empty directories."},
+      {"capability": "broken symlink detection", "detail": "Finds invalid and broken symbolic links across file systems."}
+    ],
+    "releases": [{"tag_name": "6.0.0", "name": "Czkawka 6.0.0", "published_at": "2023-10-28T09:00:00Z", "release_url": "https://github.com/qarmin/czkawka/releases/tag/6.0.0", "is_prerelease": false, "assets": [{"name": "windows_czkawka_gui.zip", "download_url": "https://github.com/qarmin/czkawka/releases/download/6.0.0/windows_czkawka_gui.zip", "size_bytes": 18200000}]}]
+  },
+  {
+    "slug": "immich",
+    "name": "Immich",
+    "summary": "High-performance self-hosted photo and video backup and management solution.",
+    "description": "Immich is a high-performance self-hosted photo and video management solution designed for seamless backup directly from phones and desktops. Features fast web interfaces, ML-powered face recognition, clip search, maps, and shared albums.",
+    "homepage_url": "https://immich.app/",
+    "repo_url": "https://github.com/immich-app/immich",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "AGPL-3.0-only",
+    "primary_category_slug": "photo-management",
+    "additional_category_slugs": ["backup"],
+    "platforms": ["linux", "web", "docker"],
+    "capabilities": [
+      {"capability": "photo organization", "detail": "Organize thousands of photos with albums, favorites, archive, and smart timelines."},
+      {"capability": "facial recognition", "detail": "On-device machine learning facial clustering and named person libraries."},
+      {"capability": "semantic image search", "detail": "Search photos using natural language concepts like 'sunset on the beach' using CLIP models."},
+      {"capability": "reverse geocoding and map", "detail": "Interactive map view showing where photos were taken with city and landmark resolution."},
+      {"capability": "shared albums and partner sharing", "detail": "Share photo collections with family and automatically sync partner libraries."}
+    ],
+    "releases": [{"tag_name": "v1.90.2", "name": "v1.90.2", "published_at": "2023-12-14T20:00:00Z", "release_url": "https://github.com/immich-app/immich/releases/tag/v1.90.2", "is_prerelease": false, "assets": [{"name": "docker-compose.yml", "download_url": "https://github.com/immich-app/immich/releases/download/v1.90.2/docker-compose.yml", "size_bytes": 4500}]}]
+  },
+  {
+    "slug": "kodi",
+    "name": "Kodi",
+    "summary": "Open source home theater software and entertainment hub for digital media.",
+    "description": "Kodi is an award-winning free and open source home theater / media center software and entertainment hub for digital media. It brings your television, movies, music, and pictures together into a customizable 10-foot interface.",
+    "homepage_url": "https://kodi.tv/",
+    "repo_url": "https://github.com/xbmc/xbmc",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "GPL-2.0-or-later",
+    "primary_category_slug": "media-player",
+    "additional_category_slugs": ["video-recording"],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "media library management", "detail": "Scrapes posters, fanart, actors, and plot descriptions for movies and TV series."},
+      {"capability": "music player and jukebox", "detail": "Organizes music collection with cue sheets, tag reading, and smart playlists."},
+      {"capability": "live tv and pvr", "detail": "Watch and record live television with electronic program guide (EPG) support."},
+      {"capability": "remote control support", "detail": "Control through CEC TV remotes, web browsers, and mobile companion apps."},
+      {"capability": "addon ecosystem", "detail": "Vast library of user-created addons for streaming services, skins, and metadata scrapers."}
+    ],
+    "releases": [{"tag_name": "20.2-Nexus", "name": "Kodi 20.2 Nexus", "published_at": "2023-07-02T13:00:00Z", "release_url": "https://kodi.tv/article/kodi-20-2-nexus-release/", "is_prerelease": false, "assets": [{"name": "kodi-20.2-Nexus-x64.exe", "download_url": "https://mirrors.kodi.tv/releases/windows/win64/kodi-20.2-Nexus-x64.exe", "size_bytes": 81500000}]}]
+  },
+  {
+    "slug": "7-zip",
+    "name": "7-Zip",
+    "summary": "High compression ratio open source file archiver with multi-format support.",
+    "description": "7-Zip is a free and open-source file archiver with a high compression ratio in 7z format with LZMA and LZMA2 compression. It supports packing/unpacking 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM formats, plus unpacking RAR, CAB, ISO, and MSI.",
+    "homepage_url": "https://www.7-zip.org/",
+    "repo_url": "https://github.com/mcmilk/7-Zip-zstd",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "LGPL-2.1-or-later",
+    "primary_category_slug": "archive-utility",
+    "additional_category_slugs": ["cleanup-utility"],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "archive compression", "detail": "Ultra high compression ratio with LZMA and LZMA2 algorithms."},
+      {"capability": "archive extraction", "detail": "Extracts 7z, ZIP, RAR, TAR, GZ, ISO, CAB, DMG, VHD, and RPM archives."},
+      {"capability": "aes-256 encryption", "detail": "Strong AES-256 encryption in 7z and ZIP formats with filename encryption support."},
+      {"capability": "multi-volume archive splitting", "detail": "Splits huge archives into manageable pieces for storage or transfer."},
+      {"capability": "windows shell integration", "detail": "Seamless integration with Windows Explorer context menu and command line interface."}
+    ],
+    "releases": [{"tag_name": "23.01", "name": "7-Zip 23.01", "published_at": "2023-06-20T10:00:00Z", "release_url": "https://www.7-zip.org/download.html", "is_prerelease": false, "assets": [{"name": "7z2301-x64.exe", "download_url": "https://www.7-zip.org/a/7z2301-x64.exe", "size_bytes": 1600000}]}]
+  },
+  {
+    "slug": "blender",
+    "name": "Blender",
+    "summary": "Free and open source 3D creation suite supporting modeling, rigging, animation, and rendering.",
+    "description": "Blender is the free and open source 3D creation suite. It supports the entirety of the 3D pipeline—modeling, rigging, animation, simulation, rendering, compositing and motion tracking, video editing and 2D animation pipeline.",
+    "homepage_url": "https://www.blender.org/",
+    "repo_url": "https://projects.blender.org/blender/blender",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "GPL-3.0-or-later",
+    "primary_category_slug": "3d-modeling",
+    "additional_category_slugs": ["video-editing"],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "3d mesh modeling", "detail": "Extensive modeling toolset including polygon meshes, curves, surfaces, and sculpting."},
+      {"capability": "photorealistic rendering", "detail": "Cycles ray-tracing engine with GPU acceleration via OptiX, CUDA, HIP, and Metal."},
+      {"capability": "character animation", "detail": "Rigging, skeletal deformation, forward/inverse kinematics, and non-linear animation editor."},
+      {"capability": "physics simulation", "detail": "Fluid, smoke, fire, cloth, dynamic paint, and rigid body simulation tools."},
+      {"capability": "compositing and vfx", "detail": "Node-based compositor for post-processing and motion tracking."}
+    ],
+    "releases": [{"tag_name": "v4.0.2", "name": "Blender 4.0.2", "published_at": "2023-12-12T10:00:00Z", "release_url": "https://www.blender.org/download/releases/4-0/", "is_prerelease": false, "assets": [{"name": "blender-4.0.2-windows-x64.msi", "download_url": "https://download.blender.org/release/Blender4.0/blender-4.0.2-windows-x64.msi", "size_bytes": 315000000}]}]
+  },
+  {
+    "slug": "inkscape",
+    "name": "Inkscape",
+    "summary": "Professional quality vector graphics software for SVG illustration, icons, and diagrams.",
+    "description": "Inkscape is a professional vector graphics editor for Linux, Windows and macOS. It's free and open source, with powerful tools for drawing, shape creation, typography, Bezier curves, and full SVG specification support.",
+    "homepage_url": "https://inkscape.org/",
+    "repo_url": "https://gitlab.com/inkscape/inkscape",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "GPL-3.0-or-later",
+    "primary_category_slug": "image-editor",
+    "additional_category_slugs": [],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "vector graphics creation", "detail": "Object creation using pencil, pen (Bezier curves), calligraphy tool, and shapes."},
+      {"capability": "svg format authoring", "detail": "Native SVG file format compliance with live XML editor."},
+      {"capability": "node and path editing", "detail": "Precision path manipulating, node alignment, boolean operations, and path insetting/outsetting."},
+      {"capability": "typography and text tools", "detail": "Multi-line text, kerning, letter spacing, text on path, and SVG font editing."}
+    ],
+    "releases": [{"tag_name": "INKSCAPE_1_3_2", "name": "Inkscape 1.3.2", "published_at": "2023-11-26T12:00:00Z", "release_url": "https://inkscape.org/release/inkscape-1.3.2/", "is_prerelease": false, "assets": [{"name": "inkscape-1.3.2_msi.msi", "download_url": "https://inkscape.org/gallery/item/44583/inkscape-1.3.2_msi.msi", "size_bytes": 115000000}]}]
+  },
+  {
+    "slug": "kdenlive",
+    "name": "Kdenlive",
+    "summary": "Powerful multi-track non-linear video editor for Linux, Windows, and macOS.",
+    "description": "Kdenlive is an acronym for KDE Non-Linear Video Editor. It provides multi-track video editing, audio mixing, color correction, titling, and support for almost all audio and video formats through FFmpeg.",
+    "homepage_url": "https://kdenlive.org/",
+    "repo_url": "https://invent.kde.org/multimedia/kdenlive",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "GPL-3.0-or-later",
+    "primary_category_slug": "video-editing",
+    "additional_category_slugs": ["video-recording"],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "multi-track video editing", "detail": "Unlimited video and audio tracks with timeline sequencing and ripple editing."},
+      {"capability": "color grading and scopes", "detail": "RGB Parade, Vectorscope, Waveform monitors, and LUT color grading."},
+      {"capability": "audio spectrogram and mixing", "detail": "Real-time audio monitoring, audio effects, and keyframable volume control."},
+      {"capability": "automatic subtitling", "detail": "Speech-to-text subtitling powered by OpenAI Whisper."}
+    ],
+    "releases": [{"tag_name": "v23.08.4", "name": "Kdenlive 23.08.4", "published_at": "2023-12-07T14:00:00Z", "release_url": "https://kdenlive.org/news/", "is_prerelease": false, "assets": [{"name": "kdenlive-23.08.4.exe", "download_url": "https://download.kde.org/stable/kdenlive/23.08/windows/kdenlive-23.08.4.exe", "size_bytes": 102000000}]}]
+  },
+  {
+    "slug": "handbrake",
+    "name": "HandBrake",
+    "summary": "Open-source video transcoder for converting video from nearly any format to modern codecs.",
+    "description": "HandBrake is a tool for converting video from nearly any format to a selection of modern, widely supported codecs. Convert videos for iPhone, iPad, Android, Apple TV, Chromecast, or web playback with fine-tuned video filters and compression controls.",
+    "homepage_url": "https://handbrake.fr/",
+    "repo_url": "https://github.com/HandBrake/HandBrake",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "GPL-2.0-or-later",
+    "primary_category_slug": "video-editing",
+    "additional_category_slugs": [],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "video transcoding", "detail": "Converts MKV, MP4, WebM, AVI, and DVD/Blu-ray into AV1, H.265, H.264, VP9."},
+      {"capability": "hardware accelerated encoding", "detail": "Intel Quick Sync, NVIDIA NVENC, AMD VCN, and Apple VideoToolbox hardware encoders."},
+      {"capability": "batch conversion", "detail": "Queue multiple encode jobs with preset video dimensions and audio passthrough."},
+      {"capability": "video filtering and deinterlacing", "detail": "Denoise, deinterlace, detelecine, deblock, and decomb filters."}
+    ],
+    "releases": [{"tag_name": "1.7.2", "name": "HandBrake 1.7.2", "published_at": "2023-12-24T16:00:00Z", "release_url": "https://github.com/HandBrake/HandBrake/releases/tag/1.7.2", "is_prerelease": false, "assets": [{"name": "HandBrake-1.7.2-x86_64-Win_GUI.exe", "download_url": "https://github.com/HandBrake/HandBrake/releases/download/1.7.2/HandBrake-1.7.2-x86_64-Win_GUI.exe", "size_bytes": 24000000}]}]
+  },
+  {
+    "slug": "shotcut",
+    "name": "Shotcut",
+    "summary": "Free, open source, cross-platform non-linear video editor with wide format support.",
+    "description": "Shotcut is a free, open source, cross-platform video editor supporting hundreds of audio and video formats and codecs thanks to FFmpeg. Features 4K resolution support, native timeline editing with no import required, and GPU effects.",
+    "homepage_url": "https://shotcut.org/",
+    "repo_url": "https://github.com/mltframework/shotcut",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "GPL-3.0-or-later",
+    "primary_category_slug": "video-editing",
+    "additional_category_slugs": [],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "native timeline editing", "detail": "Native timeline editing without project import conversion overhead."},
+      {"capability": "4k video resolution support", "detail": "Handles 4K ProRes, DNxHD, and RAW footage at 60fps."},
+      {"capability": "keyframe video filters", "detail": "Keyframable size, position, rotate, blur, color grading, and chroma key filters."}
+    ],
+    "releases": [{"tag_name": "v23.11.29", "name": "Shotcut 23.11.29", "published_at": "2023-11-29T10:00:00Z", "release_url": "https://github.com/mltframework/shotcut/releases/tag/v23.11.29", "is_prerelease": false, "assets": [{"name": "shotcut-win64-231129.exe", "download_url": "https://github.com/mltframework/shotcut/releases/download/v23.11.29/shotcut-win64-231129.exe", "size_bytes": 89000000}]}]
+  },
+  {
+    "slug": "darktable",
+    "name": "Darktable",
+    "summary": "Open source photography workflow application and non-destructive RAW developer.",
+    "description": "Darktable is an open source photography workflow application and raw developer. A virtual lighttable and darkroom for photographers. It manages your digital negatives in a database and lets you view them through a zoomable lighttable and develop raw images.",
+    "homepage_url": "https://www.darktable.org/",
+    "repo_url": "https://github.com/darktable-org/darktable",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "GPL-3.0-or-later",
+    "primary_category_slug": "photo-management",
+    "additional_category_slugs": ["image-editor"],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "non-destructive raw photo development", "detail": "Never modifies original camera raw files; all adjustments are stored in sidecar XMP files."},
+      {"capability": "camera tethering", "detail": "Direct camera control and instant image capture to workstation over USB."},
+      {"capability": "scene-referred color science", "detail": "Modern linear RGB pipeline with filmic tone equalizer and color calibration."},
+      {"capability": "image database and cataloging", "detail": "Tagging, rating, geolocation map view, and metadata search for camera collections."}
+    ],
+    "releases": [{"tag_name": "release-4.6.0", "name": "Darktable 4.6.0", "published_at": "2023-12-21T18:00:00Z", "release_url": "https://github.com/darktable-org/darktable/releases/tag/release-4.6.0", "is_prerelease": false, "assets": [{"name": "darktable-4.6.0-win64.exe", "download_url": "https://github.com/darktable-org/darktable/releases/download/release-4.6.0/darktable-4.6.0-win64.exe", "size_bytes": 110000000}]}]
+  },
+  {
+    "slug": "rawtherapee",
+    "name": "RawTherapee",
+    "summary": "Non-destructive RAW photo editor with advanced demosaicing and color grading.",
+    "description": "RawTherapee is a powerful, cross-platform raw photo processing program, released as Free Software (GPLv3). It is designed for developing raw files from a broad range of digital cameras and is targeted at users wishing to develop high-quality images.",
+    "homepage_url": "https://www.rawtherapee.com/",
+    "repo_url": "https://github.com/Beep6581/RawTherapee",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "GPL-3.0-or-later",
+    "primary_category_slug": "image-editor",
+    "additional_category_slugs": ["photo-management"],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "raw sensor demosaicing", "detail": "Dual-demosaicing algorithms combining AMaZE, RCD, and DCB for noise-free sharpness."},
+      {"capability": "wavelet noise reduction", "detail": "Multi-scale wavelet noise reduction and edge-preserving texture enhancement."},
+      {"capability": "ciecam02 color appearance model", "detail": "Advanced perceptual color appearance modeling for true-to-life tones."}
+    ],
+    "releases": [{"tag_name": "5.9", "name": "RawTherapee 5.9", "published_at": "2022-11-27T12:00:00Z", "release_url": "https://www.rawtherapee.com/downloads/", "is_prerelease": false, "assets": [{"name": "RawTherapee_5.9_win64.zip", "download_url": "https://rawtherapee.com/shared/builds/windows/RawTherapee_5.9_win64.zip", "size_bytes": 48000000}]}]
+  },
+  {
+    "slug": "krita",
+    "name": "Krita",
+    "summary": "Professional free and open source digital painting studio and 2D animation app.",
+    "description": "Krita is a professional FREE and open source painting program made by artists that want to see affordable art tools for everyone. Concept art, illustrations, comics, matte paintings, textures and 2D animations.",
+    "homepage_url": "https://krita.org/",
+    "repo_url": "https://invent.kde.org/graphics/krita",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "GPL-3.0-or-later",
+    "primary_category_slug": "image-editor",
+    "additional_category_slugs": [],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "digital illustration and painting", "detail": "Over 100 professionally crafted brush engines with brush stabilizer and wrap-around seamless mode."},
+      {"capability": "frame-by-frame 2d animation", "detail": "Traditional timeline animation with onion skinning, audio playback, and MP4/GIF export."},
+      {"capability": "vector illustration tools", "detail": "Vector shapes, text tools, and speech bubble paths for comics and concept art."}
+    ],
+    "releases": [{"tag_name": "v5.2.2", "name": "Krita 5.2.2", "published_at": "2023-12-06T15:00:00Z", "release_url": "https://krita.org/en/item/krita-5-2-2-released/", "is_prerelease": false, "assets": [{"name": "krita-x64-5.2.2-setup.exe", "download_url": "https://download.kde.org/stable/krita/5.2.2/krita-x64-5.2.2-setup.exe", "size_bytes": 165000000}]}]
+  },
+  {
+    "slug": "ardour",
+    "name": "Ardour",
+    "summary": "Professional digital audio workstation (DAW) for recording, editing, and mixing sound.",
+    "description": "Ardour is an open source, collaborative audio workstation for Linux, macOS and Windows. Record, edit and mix multi-track audio and MIDI. Produce CDs, mix video soundtracks, or just experiment with new music ideas.",
+    "homepage_url": "https://ardour.org/",
+    "repo_url": "https://github.com/Ardour/ardour",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "GPL-2.0-or-later",
+    "primary_category_slug": "music-creation",
+    "additional_category_slugs": ["audio-editor"],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "digital audio workstation", "detail": "Full professional mixing console with unlimited tracks, busses, and sends."},
+      {"capability": "midi sequencing and routing", "detail": "Piano roll MIDI editor, step sequencing, and hardware synth control."},
+      {"capability": "vst and lv2 plugin hosting", "detail": "Supports VST, VST3, AU, and LV2 audio effect and instrument plugins."},
+      {"capability": "video soundtrack mixing", "detail": "Synchronized video window with frame-accurate audio scrubbing and soundtrack export."}
+    ],
+    "releases": [{"tag_name": "8.2", "name": "Ardour 8.2", "published_at": "2023-12-14T10:00:00Z", "release_url": "https://ardour.org/whatsnew.html", "is_prerelease": false, "assets": [{"name": "Ardour-8.2.0-x86_64.exe", "download_url": "https://community.ardour.org/download", "size_bytes": 120000000}]}]
+  },
+  {
+    "slug": "lmms",
+    "name": "LMMS",
+    "summary": "Free, open source cross-platform digital audio workstation and beat synthesizer.",
+    "description": "LMMS is a sound generation system, synthesizer, beat/baseline producer and MIDI control system which powers an entire home studio. Everything from song composition to mixing and mastering can be done inside LMMS.",
+    "homepage_url": "https://lmms.io/",
+    "repo_url": "https://github.com/LMMS/lmms",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "GPL-2.0-or-later",
+    "primary_category_slug": "music-creation",
+    "additional_category_slugs": ["media-player"],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "beat and bassline sequencer", "detail": "Pattern-based drum machine and bassline grid for electronic music."},
+      {"capability": "software synthesizer instruments", "detail": "Built-in triple oscillator, Monstro synthesizer, and SoundFont player."},
+      {"capability": "piano roll melody composing", "detail": "Fine-tuned MIDI note entry, chords, velocity, and panning automation."}
+    ],
+    "releases": [{"tag_name": "v1.2.2", "name": "LMMS 1.2.2", "published_at": "2020-07-05T12:00:00Z", "release_url": "https://github.com/LMMS/lmms/releases/tag/v1.2.2", "is_prerelease": false, "assets": [{"name": "lmms-1.2.2-win64.exe", "download_url": "https://github.com/LMMS/lmms/releases/download/v1.2.2/lmms-1.2.2-win64.exe", "size_bytes": 38000000}]}]
+  },
+  {
+    "slug": "musescore",
+    "name": "MuseScore",
+    "summary": "Professional sheet music engraving and music notation software.",
+    "description": "MuseScore is an open source music notation program that runs on Windows, macOS, and Linux. Create, playback and print beautiful sheet music. Features Muse Sounds realistic orchestra samples, guitar tablature, and MIDI playback.",
+    "homepage_url": "https://musescore.org/",
+    "repo_url": "https://github.com/musescore/MuseScore",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "GPL-3.0-only",
+    "primary_category_slug": "music-creation",
+    "additional_category_slugs": [],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "sheet music notation", "detail": "Engrave notes, dynamic markings, articulations, and lyrics onto standard musical staves."},
+      {"capability": "orchestral sound playback", "detail": "Realistic instrument playback using Muse Sounds sample libraries."},
+      {"capability": "musicxml and midi export", "detail": "Interchange scores between notation software via MusicXML and MIDI."}
+    ],
+    "releases": [{"tag_name": "v4.2.0", "name": "MuseScore 4.2", "published_at": "2023-12-18T10:00:00Z", "release_url": "https://github.com/musescore/MuseScore/releases/tag/v4.2.0", "is_prerelease": false, "assets": [{"name": "MuseScore-4.2.0.233521124-x86_64.msi", "download_url": "https://github.com/musescore/MuseScore/releases/download/v4.2.0/MuseScore-4.2.0.233521124-x86_64.msi", "size_bytes": 115000000}]}]
+  },
+  {
+    "slug": "strawberry",
+    "name": "Strawberry Music Player",
+    "summary": "Music player and collection organizer aimed at audiophiles with high resolution audio.",
+    "description": "Strawberry is a music player and music collection organizer. It is aimed at music collectors and audiophiles. With Strawberry you can play your audio files, listen to audio CDs and stream internet radio while managing bit-perfect audio output.",
+    "homepage_url": "https://www.strawbs.org/",
+    "repo_url": "https://github.com/strawberrymusicplayer/strawberry",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "GPL-3.0-or-later",
+    "primary_category_slug": "media-player",
+    "additional_category_slugs": ["audio-editor"],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "audiophile bit-perfect playback", "detail": "Direct ALSA and WASAPI bit-perfect audio stream transmission without resampling."},
+      {"capability": "music library organization", "detail": "Smart playlists, audio tag editing, album cover art scrapers, and lyrics display."},
+      {"capability": "audio format decoding", "detail": "Plays DSD, WAV, FLAC, WavPack, Ogg Vorbis, Speex, MPC, TrueAudio, AIFF, MP4, MP3."}
+    ],
+    "releases": [{"tag_name": "1.0.23", "name": "Strawberry 1.0.23", "published_at": "2023-12-10T12:00:00Z", "release_url": "https://github.com/strawberrymusicplayer/strawberry/releases/tag/1.0.23", "is_prerelease": false, "assets": [{"name": "strawberry-1.0.23-x86_64.exe", "download_url": "https://github.com/strawberrymusicplayer/strawberry/releases/download/1.0.23/strawberry-1.0.23-x86_64.exe", "size_bytes": 62000000}]}]
+  },
+  {
+    "slug": "mpv",
+    "name": "mpv",
+    "summary": "Free, open-source, and cross-platform command-line and embeddable media player.",
+    "description": "mpv is a free (as in freedom) media player for the command line. It supports a wide variety of media file formats, audio and video codecs, and subtitle types. Known for high quality video output with color management, interpolation, and Lua scripting.",
+    "homepage_url": "https://mpv.io/",
+    "repo_url": "https://github.com/mpv-player/mpv",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "GPL-2.0-or-later",
+    "primary_category_slug": "media-player",
+    "additional_category_slugs": [],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "gpu video rendering", "detail": "High-grade video scaling algorithms, color management, HDR tone mapping, and interpolation."},
+      {"capability": "minimalist interface and scripting", "detail": "Zero-bloat user interface with extensive Lua scripting and JSON IPC controls."}
+    ],
+    "releases": [{"tag_name": "v0.37.0", "name": "mpv 0.37.0", "published_at": "2023-11-20T14:00:00Z", "release_url": "https://github.com/mpv-player/mpv/releases/tag/v0.37.0", "is_prerelease": false, "assets": [{"name": "mpv-0.37.0.tar.gz", "download_url": "https://github.com/mpv-player/mpv/archive/v0.37.0.tar.gz", "size_bytes": 3500000}]}]
+  },
+  {
+    "slug": "freecad",
+    "name": "FreeCAD",
+    "summary": "General-purpose parametric 3D CAD modeler and BIM design tool.",
+    "description": "FreeCAD is a general-purpose parametric 3D computer-aided design (CAD) modeler and a building information modeling (BIM) software application with finite element-method (FEM) support. Export to STEP, IGES, STL, SVG, DXF, OBJ, and IFC formats.",
+    "homepage_url": "https://www.freecad.org/",
+    "repo_url": "https://github.com/FreeCAD/FreeCAD",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "LGPL-2.1-or-later",
+    "primary_category_slug": "3d-modeling",
+    "additional_category_slugs": [],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "parametric 3d cad modeling", "detail": "Modify designs easily by going back into history and changing parameters."},
+      {"capability": "technical drawing generation", "detail": "Generate 2D views and dimensioned schematics from 3D models with TechDraw."},
+      {"capability": "finite element analysis", "detail": "Stress and thermal FEA simulations directly inside CAD models."}
+    ],
+    "releases": [{"tag_name": "0.21.2", "name": "FreeCAD 0.21.2", "published_at": "2023-11-14T10:00:00Z", "release_url": "https://github.com/FreeCAD/FreeCAD/releases/tag/0.21.2", "is_prerelease": false, "assets": [{"name": "FreeCAD-0.21.2-WIN-x64-installer.exe", "download_url": "https://github.com/FreeCAD/FreeCAD/releases/download/0.21.2/FreeCAD-0.21.2-WIN-x64-installer.exe", "size_bytes": 550000000}]}]
+  },
+  {
+    "slug": "libreoffice",
+    "name": "LibreOffice",
+    "summary": "Full-featured open-source office suite for documents, spreadsheets, and presentations.",
+    "description": "LibreOffice is a powerful and free office suite, used by millions of people around the world. Its clean interface and feature-rich tools help you unleash your creativity and enhance your productivity: Writer (word processor), Calc (spreadsheets), Impress (presentations), Draw (vector diagrams).",
+    "homepage_url": "https://www.libreoffice.org/",
+    "repo_url": "https://git.libreoffice.org/core",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "MPL-2.0",
+    "primary_category_slug": "office-suite",
+    "additional_category_slugs": [],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "word processing and documents", "detail": "Full rich text formatting, styles, table of contents, and PDF export via Writer."},
+      {"capability": "spreadsheet data calculation", "detail": "Advanced statistical formulas, pivot tables, charts, and solver analysis via Calc."},
+      {"capability": "slide presentation authoring", "detail": "Slide transitions, animations, presenter console, and multimedia slides via Impress."},
+      {"capability": "microsoft office file compatibility", "detail": "Open, edit, and save Microsoft Word (.docx), Excel (.xlsx), and PowerPoint (.pptx)."}
+    ],
+    "releases": [{"tag_name": "7.6.4", "name": "LibreOffice 7.6.4", "published_at": "2023-12-07T12:00:00Z", "release_url": "https://www.libreoffice.org/download/download-libreoffice/", "is_prerelease": false, "assets": [{"name": "LibreOffice_7.6.4_Win_x86-64.msi", "download_url": "https://download.documentfoundation.org/libreoffice/stable/7.6.4/win/x86_64/LibreOffice_7.6.4_Win_x86-64.msi", "size_bytes": 345000000}]}]
+  },
+  {
+    "slug": "thunderbird",
+    "name": "Mozilla Thunderbird",
+    "summary": "Free and open-source email, calendar, and contacts client from Mozilla.",
+    "description": "Thunderbird is a free email application that's easy to set up and customize. Features tabbed email, unified folders, address book, integrated calendar, chat support, and multiple account management with privacy protection.",
+    "homepage_url": "https://www.thunderbird.net/",
+    "repo_url": "https://hg.mozilla.org/comm-central",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "MPL-2.0",
+    "primary_category_slug": "office-suite",
+    "additional_category_slugs": [],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "email message management", "detail": "IMAP/POP3 account synchronization with message tagging, filters, and fast search."},
+      {"capability": "calendar and scheduling", "detail": "Local and CalDAV calendar scheduling with reminders and event invites."},
+      {"capability": "openpgp encryption", "detail": "End-to-end email encryption and digital signatures using OpenPGP."}
+    ],
+    "releases": [{"tag_name": "115.6.0", "name": "Thunderbird 115.6.0 Supernova", "published_at": "2023-12-19T10:00:00Z", "release_url": "https://www.thunderbird.net/en-US/thunderbird/115.6.0/releasenotes/", "is_prerelease": false, "assets": [{"name": "Thunderbird-115.6.0-win64.exe", "download_url": "https://download.mozilla.org/?product=thunderbird-115.6.0-SSL&os=win64", "size_bytes": 58000000}]}]
+  },
+  {
+    "slug": "keepassxc",
+    "name": "KeePassXC",
+    "summary": "Cross-platform offline password manager with military-grade encryption.",
+    "description": "KeePassXC is a community fork of KeePassX, the cross-platform port of KeePass for Windows. KeePassXC can store your passwords safely and auto-type them into your everyday websites and applications without relying on cloud servers.",
+    "homepage_url": "https://keepassxc.org/",
+    "repo_url": "https://github.com/keepassxreboot/keepassxc",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "GPL-3.0-or-later",
+    "primary_category_slug": "password-manager",
+    "additional_category_slugs": [],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "offline password vault", "detail": "Encrypts complete password database with AES-256, ChaCha20, and Argon2 key derivation."},
+      {"capability": "auto-type and browser integration", "detail": "Direct keyboard autotype into applications and secure browser extension integration."},
+      {"capability": "totp two-factor generator", "detail": "Generates RFC 6238 TOTP two-factor authentication codes natively inside the vault."}
+    ],
+    "releases": [{"tag_name": "2.7.6", "name": "KeePassXC 2.7.6", "published_at": "2023-09-02T10:00:00Z", "release_url": "https://keepassxc.org/blog/2023-09-02-2.7.6-released/", "is_prerelease": false, "assets": [{"name": "KeePassXC-2.7.6-Win64.msi", "download_url": "https://github.com/keepassxreboot/keepassxc/releases/download/2.7.6/KeePassXC-2.7.6-Win64.msi", "size_bytes": 28000000}]}]
+  },
+  {
+    "slug": "bitwarden-desktop",
+    "name": "Bitwarden Desktop",
+    "summary": "Open-source password manager for syncing encrypted credentials across devices.",
+    "description": "Bitwarden is an integrated open-source password management solution for individuals, teams, and business organizations. Store logins, secure notes, credit cards, and identities protected by zero-knowledge end-to-end encryption.",
+    "homepage_url": "https://bitwarden.com/",
+    "repo_url": "https://github.com/bitwarden/clients",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "GPL-3.0-only",
+    "primary_category_slug": "password-manager",
+    "additional_category_slugs": [],
+    "platforms": ["windows", "macos", "linux", "web"],
+    "capabilities": [
+      {"capability": "zero knowledge encrypted vault", "detail": "Data is encrypted and decrypted on the client device using AES-CBC 256-bit encryption."},
+      {"capability": "cross-device credential sync", "detail": "Synchronize passwords across desktop, mobile, and web browsers with self-hosting support."}
+    ],
+    "releases": [{"tag_name": "v2023.12.0", "name": "Bitwarden Desktop 2023.12.0", "published_at": "2023-12-14T15:00:00Z", "release_url": "https://github.com/bitwarden/clients/releases/tag/desktop-v2023.12.0", "is_prerelease": false, "assets": [{"name": "Bitwarden-Installer-2023.12.0.exe", "download_url": "https://github.com/bitwarden/clients/releases/download/desktop-v2023.12.0/Bitwarden-Installer-2023.12.0.exe", "size_bytes": 92000000}]}]
+  },
+  {
+    "slug": "syncthing",
+    "name": "Syncthing",
+    "summary": "Continuous peer-to-peer decentralized file synchronization without central cloud servers.",
+    "description": "Syncthing is a continuous file synchronization program. It synchronizes files between two or more computers in real time, safely protected from prying eyes. Your data is your data alone and you deserve to choose where it is stored.",
+    "homepage_url": "https://syncthing.net/",
+    "repo_url": "https://github.com/syncthing/syncthing",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "MPL-2.0",
+    "primary_category_slug": "backup",
+    "additional_category_slugs": ["cleanup-utility"],
+    "platforms": ["windows", "macos", "linux", "docker"],
+    "capabilities": [
+      {"capability": "peer-to-peer file synchronization", "detail": "Synchronizes folders directly between devices across LAN or internet using Block Exchange Protocol."},
+      {"capability": "end-to-end encrypted transfer", "detail": "Communication secured using TLS with cryptographic device certificates."},
+      {"capability": "file versioning", "detail": "Preserves file versions (simple, trash can, staggered) to protect against accidental deletes."}
+    ],
+    "releases": [{"tag_name": "v1.27.2", "name": "Syncthing v1.27.2", "published_at": "2023-12-05T12:00:00Z", "release_url": "https://github.com/syncthing/syncthing/releases/tag/v1.27.2", "is_prerelease": false, "assets": [{"name": "syncthing-windows-amd64-v1.27.2.zip", "download_url": "https://github.com/syncthing/syncthing/releases/download/v1.27.2/syncthing-windows-amd64-v1.27.2.zip", "size_bytes": 11500000}]}]
+  },
+  {
+    "slug": "restic",
+    "name": "Restic",
+    "summary": "Fast, secure, verifiable backup program using client-side cryptography and deduplication.",
+    "description": "Restic is a backup program that does backups right. Its design principles are: easy, fast, verifiable, secure, and efficient. Encrypts data with AES-256 in CTR mode and authenticates using Poly1305-AES.",
+    "homepage_url": "https://restic.net/",
+    "repo_url": "https://github.com/restic/restic",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "BSD-2-Clause",
+    "primary_category_slug": "backup",
+    "additional_category_slugs": [],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "verifiable encrypted backup", "detail": "Snapshots are tamper-proof and cryptographically verified against silent bit rot."},
+      {"capability": "cloud and local repository support", "detail": "Back up directly to SFTP, REST server, AWS S3, Google Cloud, Azure, and Backblaze B2."}
+    ],
+    "releases": [{"tag_name": "v0.16.2", "name": "restic 0.16.2", "published_at": "2023-11-28T14:00:00Z", "release_url": "https://github.com/restic/restic/releases/tag/v0.16.2", "is_prerelease": false, "assets": [{"name": "restic_0.16.2_windows_amd64.zip", "download_url": "https://github.com/restic/restic/releases/download/v0.16.2/restic_0.16.2_windows_amd64.zip", "size_bytes": 12000000}]}]
+  },
+  {
+    "slug": "duplicati",
+    "name": "Duplicati",
+    "summary": "Free backup software to store encrypted backups on cloud storage providers.",
+    "description": "Duplicati is a free backup client that securely stores encrypted, incremental, compressed backups on cloud storage services and remote file servers. Works with Amazon S3, OneDrive, Google Drive, Rackspace, and WebDAV.",
+    "homepage_url": "https://www.duplicati.com/",
+    "repo_url": "https://github.com/duplicati/duplicati",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "LGPL-2.1-or-later",
+    "primary_category_slug": "backup",
+    "additional_category_slugs": [],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "cloud backup scheduling", "detail": "Automated background scheduled backups to any cloud storage backend with web UI."},
+      {"capability": "aes-256 backup encryption", "detail": "All backup volumes are encrypted locally before transmission using standard AES-256."}
+    ],
+    "releases": [{"tag_name": "v2.0.7.1-2.0.7.1_beta_2023-05-25", "name": "Duplicati 2.0.7.1 Beta", "published_at": "2023-05-25T10:00:00Z", "release_url": "https://github.com/duplicati/duplicati/releases", "is_prerelease": false, "assets": [{"name": "duplicati-2.0.7.1_beta_2023-05-25-x64.msi", "download_url": "https://updates.duplicati.com/beta/duplicati-2.0.7.1_beta_2023-05-25-x64.msi", "size_bytes": 45000000}]}]
+  },
+  {
+    "slug": "borgbackup",
+    "name": "BorgBackup",
+    "summary": "Deduplicating backup program with authenticated encryption and SSH transport.",
+    "description": "BorgBackup (short: Borg) is a deduplicating backup program. Optionally, it supports compression and authenticated encryption. The main goal of Borg is to provide an efficient and secure way to back up data.",
+    "homepage_url": "https://www.borgbackup.org/",
+    "repo_url": "https://github.com/borgbackup/borg",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "BSD-3-Clause",
+    "primary_category_slug": "backup",
+    "additional_category_slugs": [],
+    "platforms": ["linux", "macos"],
+    "capabilities": [
+      {"capability": "chunk deduplication", "detail": "Content-defined chunking deduplicates files even when offset by small edits."},
+      {"capability": "authenticated encryption", "detail": "All data protected with 256-bit AES or ChaCha20-Poly1305."}
+    ],
+    "releases": [{"tag_name": "1.2.7", "name": "BorgBackup 1.2.7", "published_at": "2023-12-07T11:00:00Z", "release_url": "https://github.com/borgbackup/borg/releases/tag/1.2.7", "is_prerelease": false, "assets": [{"name": "borg-linux64", "download_url": "https://github.com/borgbackup/borg/releases/download/1.2.7/borg-linux64", "size_bytes": 16000000}]}]
+  },
+  {
+    "slug": "filezilla",
+    "name": "FileZilla",
+    "summary": "Fast and reliable cross-platform FTP, FTPS and SFTP client with tabbed UI.",
+    "description": "FileZilla Client is a free, open source FTP client. It supports FTP, SFTP, and FTPS (FTP over SSL/TLS). Features site manager, bookmarks, drag and drop, directory comparison, and remote file editing.",
+    "homepage_url": "https://filezilla-project.org/",
+    "repo_url": "https://svn.filezilla-project.org/svn/FileZilla3/",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "GPL-2.0-or-later",
+    "primary_category_slug": "network-transfer",
+    "additional_category_slugs": [],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "sftp and ftp file transfer", "detail": "Transfers files over SSH File Transfer Protocol (SFTP) and secure FTPS."},
+      {"capability": "remote directory browsing", "detail": "Synchronized browsing and directory comparison between local and remote hosts."}
+    ],
+    "releases": [{"tag_name": "3.66.1", "name": "FileZilla 3.66.1", "published_at": "2023-12-18T10:00:00Z", "release_url": "https://filezilla-project.org/", "is_prerelease": false, "assets": [{"name": "FileZilla_3.66.1_win64-setup.exe", "download_url": "https://download.filezilla-project.org/client/FileZilla_3.66.1_win64-setup.exe", "size_bytes": 12500000}]}]
+  },
+  {
+    "slug": "transmission",
+    "name": "Transmission",
+    "summary": "Fast, lightweight, and easy BitTorrent client with minimal resource consumption.",
+    "description": "Transmission is a fast, easy, and free BitTorrent client. It has an extremely small resource footprint, native UI across platforms, encryption support, magnet link resolution, and web interface controls.",
+    "homepage_url": "https://transmissionbt.com/",
+    "repo_url": "https://github.com/transmission/transmission",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "GPL-3.0-or-later",
+    "primary_category_slug": "network-transfer",
+    "additional_category_slugs": [],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "bittorrent file downloading", "detail": "Downloads torrents and magnet links with peer exchange (PEX) and DHT."},
+      {"capability": "bandwidth throttling and scheduling", "detail": "Set speed limits and scheduled speed caps for seeding and downloading."}
+    ],
+    "releases": [{"tag_name": "4.0.5", "name": "Transmission 4.0.5", "published_at": "2024-01-02T10:00:00Z", "release_url": "https://github.com/transmission/transmission/releases/tag/4.0.5", "is_prerelease": false, "assets": [{"name": "transmission-4.0.5-x64.msi", "download_url": "https://github.com/transmission/transmission/releases/download/4.0.5/transmission-4.0.5-x64.msi", "size_bytes": 22000000}]}]
+  },
+  {
+    "slug": "qbittorrent",
+    "name": "qBittorrent",
+    "summary": "Feature-rich open source BitTorrent client with integrated search and IP filtering.",
+    "description": "The qBittorrent project aims to provide an open-source software alternative to µTorrent. It offers an integrated torrent search engine, sequential downloading, web user interface, IP filtering, and torrent creation.",
+    "homepage_url": "https://www.qbittorrent.org/",
+    "repo_url": "https://github.com/qbittorrent/qBittorrent",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "GPL-2.0-or-later",
+    "primary_category_slug": "network-transfer",
+    "additional_category_slugs": [],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "integrated torrent search engine", "detail": "Search multiple torrent sites simultaneously within the client."},
+      {"capability": "sequential file downloading", "detail": "Download video files sequentially to preview media while downloading."}
+    ],
+    "releases": [{"tag_name": "release-4.6.2", "name": "qBittorrent 4.6.2", "published_at": "2023-11-26T12:00:00Z", "release_url": "https://www.qbittorrent.org/news.php", "is_prerelease": false, "assets": [{"name": "qbittorrent_4.6.2_x64_setup.exe", "download_url": "https://downloads.sourceforge.net/project/qbittorrent/qbittorrent-win32/qbittorrent-4.6.2/qbittorrent_4.6.2_x64_setup.exe", "size_bytes": 34000000}]}]
+  },
+  {
+    "slug": "jellyfin",
+    "name": "Jellyfin",
+    "summary": "Free software media system for managing and streaming movies, TV shows, and music.",
+    "description": "Jellyfin is the volunteer-built media solution that puts you in control of your media. Stream to any device from your own server, with no strings attached, no premium licenses or tracking.",
+    "homepage_url": "https://jellyfin.org/",
+    "repo_url": "https://github.com/jellyfin/jellyfin",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "GPL-2.0-only",
+    "primary_category_slug": "media-player",
+    "additional_category_slugs": ["photo-management"],
+    "platforms": ["linux", "windows", "macos", "web", "docker"],
+    "capabilities": [
+      {"capability": "media streaming server", "detail": "Hardware-transcodes and streams personal movies, music, and photos to client devices."},
+      {"capability": "metadata scraping and subtitles", "detail": "Fetches posters, overviews, and downloads subtitles automatically."}
+    ],
+    "releases": [{"tag_name": "v10.8.13", "name": "Jellyfin 10.8.13", "published_at": "2023-11-28T14:00:00Z", "release_url": "https://github.com/jellyfin/jellyfin/releases/tag/v10.8.13", "is_prerelease": false, "assets": [{"name": "jellyfin_10.8.13_windows-x64.zip", "download_url": "https://repo.jellyfin.org/releases/server/windows/stable/installer/jellyfin_10.8.13_windows-x64.exe", "size_bytes": 110000000}]}]
+  },
+  {
+    "slug": "calibre",
+    "name": "Calibre",
+    "summary": "Powerful and easy to use open-source e-book manager, viewer, and format converter.",
+    "description": "calibre is a powerful and easy to use e-book manager. It allows you to do nearly everything and it takes things steps beyond normal e-book software. Features library management, format conversion (EPUB, MOBI, PDF), e-reader syncing, and web server.",
+    "homepage_url": "https://calibre-ebook.com/",
+    "repo_url": "https://github.com/kovidgoyal/calibre",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "GPL-3.0-or-later",
+    "primary_category_slug": "notes-knowledge",
+    "additional_category_slugs": [],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "e-book library organization", "detail": "Catalog e-books by author, title, publisher, tags, and rating with metadata editor."},
+      {"capability": "e-book format conversion", "detail": "Converts between EPUB, MOBI, AZW3, PDF, TXT, and RTF formats."},
+      {"capability": "e-reader device synchronization", "detail": "Syncs books seamlessly to Kindle, Kobo, and Android e-readers."}
+    ],
+    "releases": [{"tag_name": "v7.2.0", "name": "calibre 7.2.0", "published_at": "2023-12-15T10:00:00Z", "release_url": "https://calibre-ebook.com/whats-new", "is_prerelease": false, "assets": [{"name": "calibre-64bit-7.2.0.msi", "download_url": "https://download.calibre-ebook.com/7.2.0/calibre-64bit-7.2.0.msi", "size_bytes": 145000000}]}]
+  },
+  {
+    "slug": "logseq",
+    "name": "Logseq",
+    "summary": "Privacy-first, open-source knowledge base and outliner working on local Markdown files.",
+    "description": "Logseq is a joyful, privacy-first, open-source knowledge base. A connected notebook for thinking, learning, and collaborating. Works on top of local plain-text Markdown and Org-mode files.",
+    "homepage_url": "https://logseq.com/",
+    "repo_url": "https://github.com/logseq/logseq",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "AGPL-3.0-only",
+    "primary_category_slug": "notes-knowledge",
+    "additional_category_slugs": [],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "bi-directional note linking", "detail": "Link thoughts with [[brackets]] and inspect connected concept graphs."},
+      {"capability": "daily journal outliner", "detail": "Chronological bullet journaling with block references and task queries."},
+      {"capability": "local markdown storage", "detail": "All files live as plain text on your hard drive with no vendor lock-in."}
+    ],
+    "releases": [{"tag_name": "0.10.3", "name": "Logseq 0.10.3", "published_at": "2023-12-28T12:00:00Z", "release_url": "https://github.com/logseq/logseq/releases/tag/0.10.3", "is_prerelease": false, "assets": [{"name": "Logseq-win-x64-0.10.3.exe", "download_url": "https://github.com/logseq/logseq/releases/download/0.10.3/Logseq-win-x64-0.10.3.exe", "size_bytes": 140000000}]}]
+  },
+  {
+    "slug": "joplin",
+    "name": "Joplin",
+    "summary": "Secure note taking and to-do application with end-to-end encryption and markdown support.",
+    "description": "Joplin is an open source note-taking and to-do application. Can handle a large number of notes organized into notebooks. Notes are searchable, can be tagged and modified, and can synchronize across devices via Nextcloud, Dropbox, OneDrive, or WebDAV.",
+    "homepage_url": "https://joplinapp.org/",
+    "repo_url": "https://github.com/laurent22/joplin",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "AGPL-3.0-or-later",
+    "primary_category_slug": "notes-knowledge",
+    "additional_category_slugs": [],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "markdown note taking", "detail": "WYSIWYG and split-screen Markdown editor with math formulae (KaTeX) and chemical equations."},
+      {"capability": "end-to-end encrypted note sync", "detail": "E2EE ensures no cloud provider can read note text or attachments."}
+    ],
+    "releases": [{"tag_name": "v2.13.15", "name": "Joplin 2.13.15", "published_at": "2023-12-19T10:00:00Z", "release_url": "https://github.com/laurent22/joplin/releases/tag/v2.13.15", "is_prerelease": false, "assets": [{"name": "Joplin-Setup-2.13.15.exe", "download_url": "https://github.com/laurent22/joplin/releases/download/v2.13.15/Joplin-Setup-2.13.15.exe", "size_bytes": 72000000}]}]
+  },
+  {
+    "slug": "vscodium",
+    "name": "VSCodium",
+    "summary": "Community-driven, telemetry-free binary distribution of Microsoft VS Code editor.",
+    "description": "VSCodium is a community-driven, freely-licensed binary distribution of Microsoft’s editor VS Code. Features identical code editing, debugging, Git integration, and extension marketplace support without Microsoft tracking and telemetry.",
+    "homepage_url": "https://vscodium.com/",
+    "repo_url": "https://github.com/VSCodium/vscodium",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "MIT",
+    "primary_category_slug": "code-editor",
+    "additional_category_slugs": [],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "source code editing", "detail": "IntelliSense syntax completion, parameter hints, and refactoring for 100+ languages."},
+      {"capability": "integrated debugger", "detail": "Breakpoints, call stack inspection, and interactive console debugging."},
+      {"capability": "telemetry-free privacy", "detail": "Built from vscode source with telemetry, data tracking, and proprietary binaries disabled."}
+    ],
+    "releases": [{"tag_name": "1.85.1.23348", "name": "VSCodium 1.85.1", "published_at": "2023-12-15T12:00:00Z", "release_url": "https://github.com/VSCodium/vscodium/releases/tag/1.85.1.23348", "is_prerelease": false, "assets": [{"name": "VSCodium-x64-1.85.1.23348.msi", "download_url": "https://github.com/VSCodium/vscodium/releases/download/1.85.1.23348/VSCodium-x64-1.85.1.23348.msi", "size_bytes": 95000000}]}]
+  },
+  {
+    "slug": "neovim",
+    "name": "Neovim",
+    "summary": "Vim-fork focused on extensibility, Lua configuration, and built-in Language Server Protocol.",
+    "description": "Neovim is a hyperextensible Vim-based text editor. Features built-in LSP client, Treesitter syntax parsing, modern terminal UI, Lua first-class scripting, and asynchronous plugin architecture.",
+    "homepage_url": "https://neovim.io/",
+    "repo_url": "https://github.com/neovim/neovim",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "Apache-2.0",
+    "primary_category_slug": "code-editor",
+    "additional_category_slugs": [],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "modal text editing", "detail": "Fast keyboard-driven modal editing with vim motions and macros."},
+      {"capability": "built-in language server protocol", "detail": "Native LSP client for auto-completion, diagnostics, and go-to-definition."},
+      {"capability": "lua configuration ecosystem", "detail": "Fast LuaJIT scripting engine powering thousands of plugins."}
+    ],
+    "releases": [{"tag_name": "v0.9.5", "name": "Neovim 0.9.5", "published_at": "2023-12-28T10:00:00Z", "release_url": "https://github.com/neovim/neovim/releases/tag/v0.9.5", "is_prerelease": false, "assets": [{"name": "nvim-win64.zip", "download_url": "https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-win64.zip", "size_bytes": 38000000}]}]
+  },
+  {
+    "slug": "alacritty",
+    "name": "Alacritty",
+    "summary": "Fast, cross-platform, OpenGL GPU-accelerated terminal emulator written in Rust.",
+    "description": "Alacritty is a modern terminal emulator that comes with sensible defaults, but allows for extensive configuration. By integrating with other applications, rather than reimagining their functionality, it delivers blazingly fast GPU-accelerated performance.",
+    "homepage_url": "https://alacritty.org/",
+    "repo_url": "https://github.com/alacritty/alacritty",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "Apache-2.0",
+    "primary_category_slug": "code-editor",
+    "additional_category_slugs": [],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "gpu accelerated terminal emulation", "detail": "OpenGL rendering pipeline provides zero latency key typing and fast scrolling."},
+      {"capability": "true color and font rendering", "detail": "24-bit TrueColor and font ligature rendering."}
+    ],
+    "releases": [{"tag_name": "v0.13.1", "name": "Alacritty 0.13.1", "published_at": "2023-12-18T14:00:00Z", "release_url": "https://github.com/alacritty/alacritty/releases/tag/v0.13.1", "is_prerelease": false, "assets": [{"name": "Alacritty-v0.13.1-installer.msi", "download_url": "https://github.com/alacritty/alacritty/releases/download/v0.13.1/Alacritty-v0.13.1-installer.msi", "size_bytes": 6200000}]}]
+  },
+  {
+    "slug": "wireshark",
+    "name": "Wireshark",
+    "summary": "World’s foremost and widely-used network protocol analyzer and packet capture tool.",
+    "description": "Wireshark is the world’s foremost network protocol analyzer. It lets you see what’s happening on your network at a microscopic level and is the de facto standard across commercial and non-profit enterprises, government agencies, and educational institutions.",
+    "homepage_url": "https://www.wireshark.org/",
+    "repo_url": "https://gitlab.com/wireshark/wireshark",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "GPL-2.0-or-later",
+    "primary_category_slug": "network-transfer",
+    "additional_category_slugs": [],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "live packet capture", "detail": "Captures live traffic from Ethernet, Wi-Fi, Bluetooth, USB, and loopback adapters."},
+      {"capability": "protocol packet dissection", "detail": "Deep inspection of hundreds of protocols with live color-coded display filters."},
+      {"capability": "tcp stream reconstruction", "detail": "Reassembles fragmented TCP streams into plain text or hex data views."}
+    ],
+    "releases": [{"tag_name": "v4.2.1", "name": "Wireshark 4.2.1", "published_at": "2024-01-03T10:00:00Z", "release_url": "https://www.wireshark.org/news/20240103.html", "is_prerelease": false, "assets": [{"name": "Wireshark-win64-4.2.1.exe", "download_url": "https://1.eu.dl.wireshark.org/win64/Wireshark-win64-4.2.1.exe", "size_bytes": 82000000}]}]
+  },
+  {
+    "slug": "dbeaver",
+    "name": "DBeaver Community",
+    "summary": "Free and open source multi-platform universal SQL database tool and data browser.",
+    "description": "DBeaver Community is a free cross-platform database tool for developers, database administrators, and analysts. Supports all popular relational and NoSQL databases: PostgreSQL, MySQL, SQLite, Oracle, DB2, SQL Server, Sybase, MS Access, Teradata, Firebird, Apache Hive, Phoenix, Presto.",
+    "homepage_url": "https://dbeaver.io/",
+    "repo_url": "https://github.com/dbeaver/dbeaver",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "Apache-2.0",
+    "primary_category_slug": "database-tool",
+    "additional_category_slugs": [],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "universal sql query editor", "detail": "Syntax highlighting, autocompletion, execution plans, and result export."},
+      {"capability": "erd schema visualizer", "detail": "Auto-generates Entity-Relationship Diagrams (ERD) from database schemas."},
+      {"capability": "data table editing", "detail": "Inline cell editing, sorting, regex filtering, and image/BLOB viewing."}
+    ],
+    "releases": [{"tag_name": "23.3.1", "name": "DBeaver 23.3.1", "published_at": "2023-12-24T12:00:00Z", "release_url": "https://dbeaver.io/release-notes/", "is_prerelease": false, "assets": [{"name": "dbeaver-ce-23.3.1-x86_64-setup.exe", "download_url": "https://dbeaver.io/files/23.3.1/dbeaver-ce-23.3.1-x86_64-setup.exe", "size_bytes": 115000000}]}]
+  },
+  {
+    "slug": "cyberduck",
+    "name": "Cyberduck",
+    "summary": "Libre server and cloud storage browser for SFTP, WebDAV, Amazon S3, and OpenStack.",
+    "description": "Cyberduck is a libre server and cloud storage browser for Mac and Windows with support for FTP, SFTP, WebDAV, Amazon S3, OpenStack Swift, Backblaze B2, Microsoft Azure & OneDrive, Google Drive and Dropbox.",
+    "homepage_url": "https://cyberduck.io/",
+    "repo_url": "https://github.com/iterate-ch/cyberduck",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "GPL-3.0-or-later",
+    "primary_category_slug": "network-transfer",
+    "additional_category_slugs": ["backup"],
+    "platforms": ["windows", "macos"],
+    "capabilities": [
+      {"capability": "cloud storage file browser", "detail": "Browse, download, upload, and synchronize files across Amazon S3, Azure, and WebDAV."},
+      {"capability": "cryptomator client-side encryption", "detail": "Seamlessly encrypts directory vaults before sending data to cloud storage."}
+    ],
+    "releases": [{"tag_name": "8.7.2", "name": "Cyberduck 8.7.2", "published_at": "2023-12-06T10:00:00Z", "release_url": "https://cyberduck.io/changelog/", "is_prerelease": false, "assets": [{"name": "Cyberduck-Installer-8.7.2.40919.exe", "download_url": "https://update.cyberduck.io/windows/Cyberduck-Installer-8.7.2.40919.exe", "size_bytes": 62000000}]}]
+  },
+  {
+    "slug": "nextcloud-desktop",
+    "name": "Nextcloud Desktop",
+    "summary": "Desktop sync client for self-hosted Nextcloud file storage and collaboration platform.",
+    "description": "The Nextcloud Desktop Client enables you to connect to your private Nextcloud server. Synchronize your files with your local machine, share files with passwords and expiration dates, and access virtual files on demand.",
+    "homepage_url": "https://nextcloud.com/",
+    "repo_url": "https://github.com/nextcloud/desktop",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "GPL-2.0-or-later",
+    "primary_category_slug": "backup",
+    "additional_category_slugs": ["office-suite"],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "cloud file synchronization", "detail": "Continuous background synchronization with selective sync and conflict resolution."},
+      {"capability": "virtual files on demand", "detail": "Windows shell virtual file support to view cloud files without consuming local disk space."}
+    ],
+    "releases": [{"tag_name": "v3.11.0", "name": "Nextcloud Desktop 3.11.0", "published_at": "2023-12-12T10:00:00Z", "release_url": "https://github.com/nextcloud/desktop/releases/tag/v3.11.0", "is_prerelease": false, "assets": [{"name": "Nextcloud-3.11.0-x64.msi", "download_url": "https://github.com/nextcloud/desktop/releases/download/v3.11.0/Nextcloud-3.11.0-x64.msi", "size_bytes": 105000000}]}]
+  },
+  {
+    "slug": "sharex",
+    "name": "ShareX",
+    "summary": "Screen capture, file sharing and productivity tool with OCR and screen recording.",
+    "description": "ShareX is a free and open source program that lets you capture or record any area of your screen and share it with a single press of a key. It also allows uploading images, text or other types of files to over 80 supported destinations.",
+    "homepage_url": "https://getsharex.com/",
+    "repo_url": "https://github.com/ShareX/ShareX",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "GPL-3.0-or-later",
+    "primary_category_slug": "video-recording",
+    "additional_category_slugs": ["image-editor"],
+    "platforms": ["windows"],
+    "capabilities": [
+      {"capability": "screen capture and recording", "detail": "Full screen, window, region, scrolling capture, and MP4/GIF screen recording via FFmpeg."},
+      {"capability": "ocr text recognition", "detail": "Extract text directly from screen regions using Tesseract OCR."},
+      {"capability": "image annotation and effects", "detail": "Draw arrows, blur sensitive information, add text, and drop shadows on screenshots."}
+    ],
+    "releases": [{"tag_name": "v15.0.0", "name": "ShareX 15.0.0", "published_at": "2023-03-20T12:00:00Z", "release_url": "https://github.com/ShareX/ShareX/releases/tag/v15.0.0", "is_prerelease": false, "assets": [{"name": "ShareX-15.0.0-setup.exe", "download_url": "https://github.com/ShareX/ShareX/releases/download/v15.0.0/ShareX-15.0.0-setup.exe", "size_bytes": 36000000}]}]
+  },
+  {
+    "slug": "flameshot",
+    "name": "Flameshot",
+    "summary": "Powerful yet simple to use screenshot software with in-place annotation.",
+    "description": "Flameshot is a powerful, open source screenshot tool for Linux, Windows, and macOS. Offers customizable on-screen drawing tools, arrows, text, blur, pin to desktop, and direct Imgur upload.",
+    "homepage_url": "https://flameshot.org/",
+    "repo_url": "https://github.com/flameshot-org/flameshot",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "GPL-3.0-or-later",
+    "primary_category_slug": "video-recording",
+    "additional_category_slugs": [],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "interactive screenshot annotation", "detail": "Draw freehand, rectangles, circles, arrows, and highlight text immediately on capture."},
+      {"capability": "screen region pin", "detail": "Pin captured area as a floating window over the desktop."}
+    ],
+    "releases": [{"tag_name": "v12.1.0", "name": "Flameshot 12.1.0", "published_at": "2022-07-24T12:00:00Z", "release_url": "https://github.com/flameshot-org/flameshot/releases/tag/v12.1.0", "is_prerelease": false, "assets": [{"name": "Flameshot-12.1.0-win64.msi", "download_url": "https://github.com/flameshot-org/flameshot/releases/download/v12.1.0/Flameshot-12.1.0-win64.msi", "size_bytes": 45000000}]}]
+  },
+  {
+    "slug": "peazip",
+    "name": "PeaZip",
+    "summary": "Free file archiver utility supporting 200+ archive formats with strong encryption.",
+    "description": "PeaZip is a free file archiver utility, based on open source technologies of 7-Zip, p7zip, FreeARC, PAQ, and PEA projects. Cross-platform, full-featured but user-friendly alternative to WinRAR and WinZip. Supports over 200 archive formats.",
+    "homepage_url": "https://peazip.github.io/",
+    "repo_url": "https://github.com/peazip/PeaZip",
+    "license_state": "confirmed_open_source",
+    "license_spdx": "LGPL-3.0-or-later",
+    "primary_category_slug": "archive-utility",
+    "additional_category_slugs": ["cleanup-utility"],
+    "platforms": ["windows", "macos", "linux"],
+    "capabilities": [
+      {"capability": "multi-format archive extraction", "detail": "Extracts 200+ formats: 7Z, ACE, CAB, ISO, RAR, TAR, ZIP, ZIPX, ZSTD."},
+      {"capability": "secure data deletion and hashing", "detail": "Secure deletion (shredding), file checksum calculation (CRC32, MD5, SHA), and password manager."}
+    ],
+    "releases": [{"tag_name": "9.6.0", "name": "PeaZip 9.6.0", "published_at": "2023-12-08T10:00:00Z", "release_url": "https://github.com/peazip/PeaZip/releases/tag/9.6.0", "is_prerelease": false, "assets": [{"name": "peazip-9.6.0.WIN64.exe", "download_url": "https://github.com/peazip/PeaZip/releases/download/9.6.0/peazip-9.6.0.WIN64.exe", "size_bytes": 10500000}]}]
+  },
+  {
+    "slug": "unresolved-demo-tool",
+    "name": "Unresolved License Demo Tool",
+    "summary": "Internal demonstration application with pending or unresolved license determination.",
+    "description": "This application record exists to test license state segregation. It must never appear when filtering by confirmed_open_source.",
+    "homepage_url": "https://example.com/unresolved",
+    "repo_url": "https://example.com/unresolved-repo",
+    "license_state": "unresolved_license",
+    "license_spdx": null,
+    "primary_category_slug": "cleanup-utility",
+    "additional_category_slugs": [],
+    "platforms": ["windows", "linux"],
+    "capabilities": [{"capability": "test license filtering", "detail": "Used solely for test assertion."}],
+    "releases": []
+  },
+  {
+    "slug": "source-available-demo",
+    "name": "Source Available Demo Tool",
+    "summary": "Application with source-available commercial license, non-qualifying for open source discovery.",
+    "description": "This application record has non-open-source licensing (SSPL or BSL) to verify that only confirmed open source results qualify.",
+    "homepage_url": "https://example.com/source-available",
+    "repo_url": "https://example.com/source-available-repo",
+    "license_state": "non_open_source",
+    "license_spdx": "BSL-1.1",
+    "primary_category_slug": "backup",
+    "additional_category_slugs": [],
+    "platforms": ["linux"],
+    "capabilities": [{"capability": "test non-foss gating", "detail": "Used solely for test assertion."}],
+    "releases": []
+  }
+]

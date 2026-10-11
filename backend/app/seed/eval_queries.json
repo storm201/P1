@@ -1,0 +1,551 @@
+{
+  "development_queries": [
+    {
+      "id": "dev_01",
+      "query": "music",
+      "type": "broad_topic",
+      "relevant_categories": [
+        "audio-editor",
+        "media-player",
+        "music-creation"
+      ],
+      "expected_apps": {
+        "musescore": 3,
+        "strawberry": 3,
+        "ardour": 3,
+        "lmms": 3,
+        "audacity": 3,
+        "vlc": 2,
+        "kodi": 2,
+        "mpv": 2,
+        "jellyfin": 2
+      }
+    },
+    {
+      "id": "dev_02",
+      "query": "storage",
+      "type": "broad_topic",
+      "relevant_categories": [
+        "cleanup-utility",
+        "backup",
+        "duplicate-finder",
+        "archive-utility",
+        "network-transfer"
+      ],
+      "expected_apps": {
+        "bleachbit": 3,
+        "czkawka": 3,
+        "kopia": 3,
+        "restic": 3,
+        "duplicati": 3,
+        "borgbackup": 3,
+        "peazip": 2,
+        "7-zip": 2,
+        "cyberduck": 2,
+        "nextcloud-desktop": 2,
+        "syncthing": 2
+      }
+    },
+    {
+      "id": "dev_03",
+      "query": "organize my photos",
+      "type": "specific_task",
+      "relevant_categories": [
+        "photo-management",
+        "image-editor"
+      ],
+      "expected_apps": {
+        "immich": 3,
+        "darktable": 3,
+        "rawtherapee": 2,
+        "gimp": 2,
+        "czkawka": 1
+      }
+    },
+    {
+      "id": "dev_04",
+      "query": "find duplicate audio files",
+      "type": "specific_task",
+      "relevant_categories": [
+        "duplicate-finder"
+      ],
+      "expected_apps": {
+        "czkawka": 3,
+        "bleachbit": 1
+      }
+    },
+    {
+      "id": "dev_05",
+      "query": "open-source photo editor for Linux",
+      "type": "platform_and_license_constraint",
+      "relevant_categories": [
+        "image-editor",
+        "photo-management"
+      ],
+      "expected_apps": {
+        "gimp": 3,
+        "darktable": 3,
+        "rawtherapee": 3,
+        "krita": 3,
+        "inkscape": 2
+      }
+    },
+    {
+      "id": "dev_06",
+      "query": "audio editor",
+      "type": "specific_task",
+      "relevant_categories": [
+        "audio-editor"
+      ],
+      "expected_apps": {
+        "audacity": 3,
+        "ardour": 3,
+        "lmms": 2,
+        "vlc": 1,
+        "strawberry": 1
+      }
+    },
+    {
+      "id": "dev_07",
+      "query": "media player",
+      "type": "specific_task",
+      "relevant_categories": [
+        "media-player"
+      ],
+      "expected_apps": {
+        "vlc": 3,
+        "kodi": 3,
+        "mpv": 3,
+        "strawberry": 3,
+        "jellyfin": 2,
+        "audacity": 1
+      }
+    },
+    {
+      "id": "dev_08",
+      "query": "screen recorder",
+      "type": "specific_task",
+      "relevant_categories": [
+        "video-recording"
+      ],
+      "expected_apps": {
+        "obs-studio": 3,
+        "sharex": 3,
+        "flameshot": 2,
+        "kdenlive": 1
+      }
+    },
+    {
+      "id": "dev_09",
+      "query": "live streaming software",
+      "type": "specific_task",
+      "relevant_categories": [
+        "video-recording"
+      ],
+      "expected_apps": {
+        "obs-studio": 3,
+        "kodi": 2,
+        "jellyfin": 2
+      }
+    },
+    {
+      "id": "dev_10",
+      "query": "clean disk space",
+      "type": "specific_task",
+      "relevant_categories": [
+        "cleanup-utility"
+      ],
+      "expected_apps": {
+        "bleachbit": 3,
+        "czkawka": 3,
+        "peazip": 2,
+        "7-zip": 1
+      }
+    },
+    {
+      "id": "dev_11",
+      "query": "shred temporary files",
+      "type": "specific_task",
+      "relevant_categories": [
+        "cleanup-utility"
+      ],
+      "expected_apps": {
+        "bleachbit": 3,
+        "czkawka": 2
+      }
+    },
+    {
+      "id": "dev_12",
+      "query": "encrypted cloud backup",
+      "type": "specific_task",
+      "relevant_categories": [
+        "backup"
+      ],
+      "expected_apps": {
+        "kopia": 3,
+        "restic": 3,
+        "duplicati": 3,
+        "borgbackup": 3,
+        "nextcloud-desktop": 2
+      }
+    },
+    {
+      "id": "dev_13",
+      "query": "find similar images",
+      "type": "specific_task",
+      "relevant_categories": [
+        "duplicate-finder"
+      ],
+      "expected_apps": {
+        "czkawka": 3,
+        "immich": 2,
+        "darktable": 1
+      }
+    },
+    {
+      "id": "dev_14",
+      "query": "remove empty folders",
+      "type": "specific_task",
+      "relevant_categories": [
+        "duplicate-finder"
+      ],
+      "expected_apps": {
+        "czkawka": 3,
+        "bleachbit": 2
+      }
+    },
+    {
+      "id": "dev_15",
+      "query": "self hosted photo gallery",
+      "type": "specific_task",
+      "relevant_categories": [
+        "photo-management"
+      ],
+      "expected_apps": {
+        "immich": 3,
+        "jellyfin": 2,
+        "nextcloud-desktop": 2
+      }
+    },
+    {
+      "id": "dev_16",
+      "query": "home theater pc",
+      "type": "specific_task",
+      "relevant_categories": [
+        "media-player"
+      ],
+      "expected_apps": {
+        "kodi": 3,
+        "jellyfin": 3,
+        "vlc": 2,
+        "mpv": 2
+      }
+    },
+    {
+      "id": "dev_17",
+      "query": "extract zip archives",
+      "type": "specific_task",
+      "relevant_categories": [
+        "archive-utility"
+      ],
+      "expected_apps": {
+        "7-zip": 3,
+        "peazip": 3
+      }
+    },
+    {
+      "id": "dev_18",
+      "query": "multi track sound recording",
+      "type": "specific_task",
+      "relevant_categories": [
+        "audio-editor",
+        "music-creation"
+      ],
+      "expected_apps": {
+        "audacity": 3,
+        "ardour": 3,
+        "lmms": 2
+      }
+    },
+    {
+      "id": "dev_19",
+      "query": "audaciti",
+      "type": "typo",
+      "relevant_categories": [
+        "audio-editor"
+      ],
+      "expected_apps": {
+        "audacity": 3,
+        "ardour": 2,
+        "lmms": 1
+      }
+    },
+    {
+      "id": "dev_20",
+      "query": "blechbit",
+      "type": "typo",
+      "relevant_categories": [
+        "cleanup-utility"
+      ],
+      "expected_apps": {
+        "bleachbit": 3,
+        "czkawka": 2
+      }
+    },
+    {
+      "id": "dev_21",
+      "query": "czkawk",
+      "type": "typo",
+      "relevant_categories": [
+        "duplicate-finder"
+      ],
+      "expected_apps": {
+        "czkawka": 3,
+        "bleachbit": 2
+      }
+    },
+    {
+      "id": "dev_22",
+      "query": "kopya backup",
+      "type": "typo",
+      "relevant_categories": [
+        "backup"
+      ],
+      "expected_apps": {
+        "kopia": 3,
+        "restic": 2,
+        "duplicati": 2,
+        "borgbackup": 2
+      }
+    },
+    {
+      "id": "dev_23",
+      "query": "imich photos",
+      "type": "typo",
+      "relevant_categories": [
+        "photo-management"
+      ],
+      "expected_apps": {
+        "immich": 3,
+        "darktable": 2,
+        "rawtherapee": 2,
+        "gimp": 1
+      }
+    },
+    {
+      "id": "dev_24",
+      "query": "video broadcast for windows",
+      "type": "platform_constraint",
+      "relevant_categories": [
+        "video-recording"
+      ],
+      "expected_apps": {
+        "obs-studio": 3,
+        "sharex": 2,
+        "kdenlive": 1,
+        "shotcut": 1
+      }
+    },
+    {
+      "id": "dev_25",
+      "query": "backup tool for macos",
+      "type": "platform_constraint",
+      "relevant_categories": [
+        "backup"
+      ],
+      "expected_apps": {
+        "kopia": 3,
+        "restic": 3,
+        "duplicati": 3,
+        "borgbackup": 3,
+        "syncthing": 2
+      }
+    },
+    {
+      "id": "dev_26",
+      "query": "play movies with subtitles",
+      "type": "specific_task",
+      "relevant_categories": [
+        "media-player"
+      ],
+      "expected_apps": {
+        "vlc": 3,
+        "kodi": 3,
+        "mpv": 3,
+        "jellyfin": 2,
+        "strawberry": 1
+      }
+    },
+    {
+      "id": "dev_27",
+      "query": "image retouching layers",
+      "type": "specific_task",
+      "relevant_categories": [
+        "image-editor"
+      ],
+      "expected_apps": {
+        "gimp": 3,
+        "krita": 3,
+        "darktable": 2,
+        "rawtherapee": 2
+      }
+    },
+    {
+      "id": "dev_28",
+      "query": "compress 7z files with encryption",
+      "type": "specific_task",
+      "relevant_categories": [
+        "archive-utility"
+      ],
+      "expected_apps": {
+        "7-zip": 3,
+        "peazip": 3,
+        "kopia": 2
+      }
+    },
+    {
+      "id": "dev_29",
+      "query": "quantum teleportation reactor controller",
+      "type": "unknown_query",
+      "relevant_categories": [],
+      "expected_apps": {}
+    },
+    {
+      "id": "dev_30",
+      "query": "interstellar spacecraft warp drive firmware",
+      "type": "unknown_query",
+      "relevant_categories": [],
+      "expected_apps": {}
+    }
+  ],
+  "held_out_queries": [
+    {
+      "id": "held_01",
+      "query": "listen to podcasts and mp3",
+      "type": "specific_task",
+      "relevant_categories": [
+        "media-player",
+        "audio-editor"
+      ],
+      "expected_apps": {
+        "strawberry": 3,
+        "vlc": 3,
+        "kodi": 2,
+        "mpv": 2,
+        "audacity": 1
+      }
+    },
+    {
+      "id": "held_02",
+      "query": "wipe free disk space",
+      "type": "specific_task",
+      "relevant_categories": [
+        "cleanup-utility"
+      ],
+      "expected_apps": {
+        "bleachbit": 3,
+        "czkawka": 2
+      }
+    },
+    {
+      "id": "held_03",
+      "query": "client side deduplicated backups",
+      "type": "specific_task",
+      "relevant_categories": [
+        "backup"
+      ],
+      "expected_apps": {
+        "kopia": 3,
+        "restic": 3,
+        "borgbackup": 3,
+        "duplicati": 2
+      }
+    },
+    {
+      "id": "held_04",
+      "query": "detect zeroed and empty files",
+      "type": "specific_task",
+      "relevant_categories": [
+        "duplicate-finder"
+      ],
+      "expected_apps": {
+        "czkawka": 3,
+        "bleachbit": 2
+      }
+    },
+    {
+      "id": "held_05",
+      "query": "gnome photo editor",
+      "type": "specific_task",
+      "relevant_categories": [
+        "image-editor"
+      ],
+      "expected_apps": {
+        "gimp": 3,
+        "rawtherapee": 2,
+        "darktable": 2,
+        "inkscape": 1
+      }
+    },
+    {
+      "id": "held_06",
+      "query": "vls media",
+      "type": "typo",
+      "relevant_categories": [
+        "media-player"
+      ],
+      "expected_apps": {
+        "vlc": 3,
+        "mpv": 2,
+        "kodi": 2,
+        "strawberry": 1
+      }
+    },
+    {
+      "id": "held_07",
+      "query": "obz studio recorder",
+      "type": "typo",
+      "relevant_categories": [
+        "video-recording"
+      ],
+      "expected_apps": {
+        "obs-studio": 3,
+        "sharex": 2,
+        "flameshot": 1
+      }
+    },
+    {
+      "id": "held_08",
+      "query": "photo manager on linux",
+      "type": "platform_constraint",
+      "relevant_categories": [
+        "photo-management"
+      ],
+      "expected_apps": {
+        "immich": 3,
+        "darktable": 3,
+        "rawtherapee": 2,
+        "gimp": 2
+      }
+    },
+    {
+      "id": "held_09",
+      "query": "lzma compression tool",
+      "type": "specific_task",
+      "relevant_categories": [
+        "archive-utility"
+      ],
+      "expected_apps": {
+        "7-zip": 3,
+        "peazip": 3
+      }
+    },
+    {
+      "id": "held_10",
+      "query": "astrological telepathic crystal tuning",
+      "type": "unknown_query",
+      "relevant_categories": [],
+      "expected_apps": {}
+    }
+  ]
+}

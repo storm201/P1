@@ -1,0 +1,166 @@
+[
+  {
+    "slug": "music",
+    "name": "Music & Audio",
+    "description": "Audio playback, recording, editing, sound synthesis, and music library management.",
+    "aliases": ["music", "audio", "sound", "songs", "soundtrack", "mp3", "flac"],
+    "subcategories": [
+      {
+        "slug": "audio-editor",
+        "name": "Audio Editors & Recorders",
+        "description": "Multi-track sound recording, waveform editing, noise removal, and mastering.",
+        "aliases": ["audio editor", "sound editor", "audio recording", "voice recorder", "multitrack", "spectral editor"]
+      },
+      {
+        "slug": "media-player",
+        "name": "Media Players",
+        "description": "Audio and video playback engines supporting modern formats, streaming, and playlists.",
+        "aliases": ["media player", "music player", "video player", "mp3 player", "movie player", "streaming player", "home theater", "jukebox"]
+      },
+      {
+        "slug": "music-creation",
+        "name": "Music Creation & DAWs",
+        "description": "Digital audio workstations, MIDI sequencers, software synthesizers, and beat production.",
+        "aliases": ["daw", "synthesizer", "beat maker", "sequencer", "music production", "sheet music", "notation", "audio workstation"]
+      }
+    ]
+  },
+  {
+    "slug": "storage",
+    "name": "Storage & Data Management",
+    "description": "Disk analysis, space optimization, data backup, file deduplication, and archives.",
+    "aliases": ["storage", "disk", "files", "filesystem", "hard drive", "space"],
+    "subcategories": [
+      {
+        "slug": "cleanup-utility",
+        "name": "Disk Cleaners & Optimizers",
+        "description": "System cleaners, privacy shredders, cache purge utilities, and temp file cleaners.",
+        "aliases": ["disk cleaner", "cleanup", "cleaner", "space cleaner", "shredder", "junk cleaner", "temp cleaner", "free space"]
+      },
+      {
+        "slug": "backup",
+        "name": "Backup & Synchronization",
+        "description": "Deduplicated, encrypted backup utilities, cloud snapshots, and file replication.",
+        "aliases": ["backup", "snapshots", "cloud backup", "restore", "file sync", "data preservation", "deduplication", "synchronization"]
+      },
+      {
+        "slug": "duplicate-finder",
+        "name": "Duplicate Finders & Analyzers",
+        "description": "Tools that locate exact duplicates, similar images, empty directories, and large files.",
+        "aliases": ["duplicate finder", "duplicate files", "duplicate detector", "similar images", "empty folders", "file deduplication", "duplicate audio"]
+      },
+      {
+        "slug": "archive-utility",
+        "name": "Archive & Compression Tools",
+        "description": "File compression, archive creation and extraction with multi-format support.",
+        "aliases": ["archive", "compression", "zip", "7z", "unzip", "tar", "extractor", "peazip", "compress"]
+      }
+    ]
+  },
+  {
+    "slug": "graphics",
+    "name": "Graphics & Photography",
+    "description": "Photo editing, digital painting, RAW processing, and 3D modeling.",
+    "aliases": ["graphics", "photos", "images", "pictures", "visual", "art", "drawing"],
+    "subcategories": [
+      {
+        "slug": "image-editor",
+        "name": "Image & Photo Editors",
+        "description": "Raster and vector image editors for photo retouching, composition, and digital drawing.",
+        "aliases": ["photo editor", "image editor", "retouching", "paint", "drawing", "photoshop alternative", "vector graphics", "illustration"]
+      },
+      {
+        "slug": "photo-management",
+        "name": "Photo & Media Organizers",
+        "description": "Self-hosted media servers, album managers, facial recognition, and metadata taggers.",
+        "aliases": ["photo organizer", "photo management", "photo gallery", "image organizer", "photo albums", "exif organizer"]
+      },
+      {
+        "slug": "3d-modeling",
+        "name": "3D Modeling & Animation",
+        "description": "3D mesh modeling, rigging, animation, rendering, simulation, and CAD design.",
+        "aliases": ["3d modeling", "3d animation", "rendering", "cad", "blender", "parametric cad"]
+      }
+    ]
+  },
+  {
+    "slug": "video",
+    "name": "Video & Broadcasting",
+    "description": "Video capture, live streaming, editing, and screen recording software.",
+    "aliases": ["video", "broadcasting", "streaming", "movies", "transcoding"],
+    "subcategories": [
+      {
+        "slug": "video-recording",
+        "name": "Video Recording & Live Streaming",
+        "description": "Software for capturing gameplay, desktop screens, audio mixers, and streaming to platforms.",
+        "aliases": ["video recording", "screen recorder", "live stream", "broadcaster", "obs", "streamer", "screenshot", "capture"]
+      },
+      {
+        "slug": "video-editing",
+        "name": "Video Editors & Transcoders",
+        "description": "Non-linear multi-track video editing, timeline splicing, transitions, and format transcoding.",
+        "aliases": ["video editor", "transcoder", "handbrake", "video montage", "timeline", "video encoding"]
+      }
+    ]
+  },
+  {
+    "slug": "productivity",
+    "name": "Productivity & Knowledge",
+    "description": "Office document suites, markdown note taking, e-book readers, and personal knowledge bases.",
+    "aliases": ["productivity", "notes", "office", "documents", "knowledge", "reading"],
+    "subcategories": [
+      {
+        "slug": "office-suite",
+        "name": "Office & Document Suites",
+        "description": "Word processing, spreadsheet calculation, presentations, and email communication.",
+        "aliases": ["office", "word processor", "spreadsheet", "presentation", "email client", "thunderbird", "libreoffice"]
+      },
+      {
+        "slug": "notes-knowledge",
+        "name": "Notes & Knowledge Management",
+        "description": "Markdown outliners, encrypted notebooks, personal wikis, and e-book management.",
+        "aliases": ["notes", "notebook", "markdown", "knowledge base", "pkm", "e-book", "calibre", "joplin", "logseq"]
+      }
+    ]
+  },
+  {
+    "slug": "security",
+    "name": "Security & Network",
+    "description": "Password management, credential security, network traffic analysis, and remote file transfer.",
+    "aliases": ["security", "passwords", "network", "privacy", "credentials"],
+    "subcategories": [
+      {
+        "slug": "password-manager",
+        "name": "Password Managers",
+        "description": "Encrypted credential vaults, password generation, and biometric autotype.",
+        "aliases": ["password manager", "password vault", "keepass", "bitwarden", "passwords", "credentials", "2fa"]
+      },
+      {
+        "slug": "network-transfer",
+        "name": "Network & File Transfer",
+        "description": "Packet sniffing, traffic inspection, FTP/SFTP clients, and peer-to-peer distribution.",
+        "aliases": ["network analyzer", "packet capture", "wireshark", "ftp", "sftp", "bittorrent", "torrent", "transmission"]
+      }
+    ]
+  },
+  {
+    "slug": "developer-tools",
+    "name": "Developer Tools",
+    "description": "Code editors, terminal emulators, SQL database tools, and software utilities.",
+    "aliases": ["developer", "coding", "terminal", "database", "sql", "editor", "programming"],
+    "subcategories": [
+      {
+        "slug": "code-editor",
+        "name": "Code Editors & Terminals",
+        "description": "Extensible text editors, IDEs, and GPU-accelerated terminal consoles.",
+        "aliases": ["code editor", "ide", "text editor", "terminal", "neovim", "vscodium", "alacritty"]
+      },
+      {
+        "slug": "database-tool",
+        "name": "Database Management Tools",
+        "description": "Universal SQL clients, schema visualizers, and query analyzers.",
+        "aliases": ["database tool", "sql client", "dbeaver", "database browser", "query editor"]
+      }
+    ]
+  }
+]
