@@ -232,87 +232,10 @@ def reembed_catalog(db: Session, encoder: Optional[EmbeddingEncoderInterface] = 
     return len(docs)
 
 
-def normalize_query(query: str) -> str:
-    """Normalize query: lower, unaccent, remove excess whitespace and special characters."""
-    clean = unaccent_text(query).lower()
-    clean = re.sub(r"[^\w\s\-\:]", " ", clean)
-    clean = re.sub(r"\s+", " ", clean).strip()
-    return clean
-
-
-def parse_query_constraints(query: str) -> Tuple[str, Dict[str, Any]]:
-    """
-    Extract deterministic intent filters:
-    e.g., 'open-source photo editor for linux' -> platform='linux'
-    'mit backup' -> license='mit'
-    """
-    normalized = normalize_query(query)
-    constraints: Dict[str, Any] = {}
-
-    # Platform constraints
-    platforms = ["linux", "windows", "macos", "mac", "web", "docker"]
-    for p in platforms:
-        pattern = rf"\b(for|on)?\s*{p}\b"
-        if re.search(pattern, normalized):
-            target_p = "macos" if p == "mac" else p
-            constraints["platform"] = target_p
-            normalized = re.sub(pattern, "", normalized).strip()
-
-    # License constraints
-    if "open-source" in normalized or "open source" in normalized or "foss" in normalized:
-        constraints["license_state"] = "confirmed_open_source"
-        normalized = re.sub(r"\b(open-source|open source|foss)\b", "", normalized).strip()
-
-    normalized = re.sub(r"\s+", " ", normalized).strip()
-    return normalized, constraints
-
-
-def match_categories_and_aliases(db: Session, text: str) -> Tuple[List[Category], List[str]]:
-    """Detect taxonomy categories matching text or curated aliases using word boundaries."""
-    tokens = set(text.lower().split())
-    matched_cats: Dict[int, Category] = {}
-    detected_names: List[str] = []
-    stop_words = {"tools", "tool", "and", "or", "&", "for", "the", "system", "management", "app", "utility"}
-
-    aliases = db.query(CategoryAlias).all()
-    for al in aliases:
-        al_text = al.alias.lower()
-        # Enforce whole word/phrase boundary matching
-        pattern = rf"\b{re.escape(al_text)}\b"
-        if re.search(pattern, text):
-            cat = db.query(Category).filter(Category.id == al.category_id).first()
-            if cat and cat.id not in matched_cats:
-                matched_cats[cat.id] = cat
-                detected_names.append(cat.name)
-
-    # Check direct category names
-    cats = db.query(Category).all()
-    for cat in cats:
-        c_name = cat.name.lower()
-        if re.search(rf"\b{re.escape(c_name)}\b", text):
-            if cat.id not in matched_cats:
-                matched_cats[cat.id] = cat
-                detected_names.append(cat.name)
-        else:
-            cat_words = set(c_name.split()) - stop_words
-            if cat_words and cat_words.issubset(tokens):
-                if cat.id not in matched_cats:
-                    matched_cats[cat.id] = cat
-                    detected_names.append(cat.name)
-
-    return list(matched_cats.values()), detected_names
-
-
-def cosine_similarity(v1: List[float], v2: List[float]) -> float:
-    if not v1 or not v2 or len(v1) != len(v2):
-        return 0.0
-    dot = sum(a * b for a, b in zip(v1, v2))
-    norm1 = sum(a * a for a in v1) ** 0.5
-    norm2 = sum(b * b for b in v2) ** 0.5
-    if norm1 == 0 or norm2 == 0:
-        return 0.0
-    return dot / (norm1 * norm2)
-
+GENERIC_TERMS = {
+    "file", "files", "manager", "management", "tool", "tools", "app", "apps",
+    "software", "utility", "system", "program", "suite", "client", "browser", "viewer", "helper"
+}
 
 STOP_WORDS = {
     "my", "a", "an", "the", "and", "or", "for", "in", "to", "of", "with", "is", "at", "by", "on", "from",
@@ -340,7 +263,127 @@ def light_stem(w: str) -> str:
         return w[:-2]
     if w.endswith("ize") and len(w) > 5:
         return w[:-1]
+    if w.endswith("er") and len(w) > 5 and not w.endswith("other") and not w.endswith("under"):
+        return w[:-2]
+    if w.endswith("or") and len(w) > 5:
+        return w[:-2]
     return w
+
+
+def normalize_query(query: str) -> str:
+    """Normalize query: lower, unaccent, normalize phrasal verbs, remove excess whitespace and special characters."""
+    clean = unaccent_text(query).lower()
+    clean = re.sub(r"\bback\s+up\b", "backup", clean)
+    clean = re.sub(r"\bset\s+up\b", "setup", clean)
+    clean = re.sub(r"\bclean\s+up\b", "cleanup", clean)
+    clean = re.sub(r"[^\w\s\-\:]", " ", clean)
+    clean = re.sub(r"\s+", " ", clean).strip()
+    return clean
+
+
+def parse_query_constraints(query: str) -> Tuple[str, Dict[str, Any]]:
+    """
+    Extract deterministic intent filters:
+    e.g., 'open-source photo editor for linux' -> platform='linux', license_state='confirmed_open_source'
+    """
+    normalized = normalize_query(query)
+    constraints: Dict[str, Any] = {}
+
+    # Platform constraints
+    platforms = ["linux", "windows", "macos", "mac", "web", "docker"]
+    for p in platforms:
+        pattern = rf"\b(for|on)?\s*{p}\b"
+        if re.search(pattern, normalized):
+            target_p = "macos" if p == "mac" else p
+            constraints["platform"] = target_p
+            normalized = re.sub(pattern, "", normalized).strip()
+
+    # License constraints
+    if re.search(r"\b(open-source|open source|foss)\b", normalized):
+        constraints["license_state"] = "confirmed_open_source"
+        normalized = re.sub(r"\b(open-source|open source|foss)\b", "", normalized).strip()
+
+    normalized = re.sub(r"\s+", " ", normalized).strip()
+    return normalized, constraints
+
+
+def match_categories_and_aliases(db: Session, text: str) -> Tuple[List[Category], List[str]]:
+    """
+    Greedy non-overlapping longest-span entity matching for taxonomy aliases and category names.
+    Prevents shorter nested sub-tokens (e.g. 'editor' -> Developer Tools) from matching
+    when part of a longer specific phrase (e.g. 'photo editor' -> Image & Photo Editors).
+    """
+    aliases = db.query(CategoryAlias).all()
+    categories = db.query(Category).all()
+
+    candidates: List[Tuple[str, Category, int]] = []
+    for al in aliases:
+        candidates.append((al.alias.lower().strip(), al.category, len(al.alias.split())))
+    for cat in categories:
+        candidates.append((cat.name.lower().strip(), cat, len(cat.name.split())))
+
+    # Longest phrase first
+    candidates.sort(key=lambda x: (x[2], len(x[0])), reverse=True)
+
+    matched_cats: Dict[int, Category] = {}
+    detected_names: List[str] = []
+    occupied_spans: List[Tuple[int, int]] = []
+
+    for phrase, cat, word_count in candidates:
+        if not phrase:
+            continue
+        p_pattern = rf"\b{re.escape(phrase)}\b"
+        matched_m = list(re.finditer(p_pattern, text, re.IGNORECASE))
+        if matched_m:
+            for m in matched_m:
+                start, end = m.span()
+                overlap = any(max(start, o_start) < min(end, o_end) for o_start, o_end in occupied_spans)
+                if not overlap:
+                    occupied_spans.append((start, end))
+                    if cat.id not in matched_cats:
+                        matched_cats[cat.id] = cat
+                        detected_names.append(cat.name)
+        else:
+            # Check stemmed match for single-word aliases on unoccupied spans
+            p_words = [w for w in phrase.split() if w not in STOP_WORDS]
+            if len(p_words) == 1:
+                p_stem = light_stem(p_words[0])
+                if len(p_stem) >= 4:
+                    for m in re.finditer(r"\b\w+\b", text):
+                        word = m.group(0).lower()
+                        if word not in STOP_WORDS and light_stem(word) == p_stem:
+                            start, end = m.span()
+                            overlap = any(max(start, o_start) < min(end, o_end) for o_start, o_end in occupied_spans)
+                            if not overlap:
+                                occupied_spans.append((start, end))
+                                if cat.id not in matched_cats:
+                                    matched_cats[cat.id] = cat
+                                    detected_names.append(cat.name)
+
+    # Check stemmed set match for multi-word queries (e.g. 'organize photos' -> 'photo organizer')
+    query_tokens = [t for t in text.lower().split() if t not in STOP_WORDS]
+    query_stems = {light_stem(t) for t in query_tokens}
+    if len(query_stems) >= 2:
+        for phrase, cat, _ in candidates:
+            p_tokens = [t for t in phrase.split() if t not in STOP_WORDS]
+            p_stems = {light_stem(t) for t in p_tokens}
+            if len(p_stems) >= 2 and p_stems.issubset(query_stems):
+                if cat.id not in matched_cats:
+                    matched_cats[cat.id] = cat
+                    detected_names.append(cat.name)
+
+    return list(matched_cats.values()), detected_names
+
+
+def cosine_similarity(v1: List[float], v2: List[float]) -> float:
+    if not v1 or not v2 or len(v1) != len(v2):
+        return 0.0
+    dot = sum(a * b for a, b in zip(v1, v2))
+    norm1 = sum(a * a for a in v1) ** 0.5
+    norm2 = sum(b * b for b in v2) ** 0.5
+    if norm1 == 0 or norm2 == 0:
+        return 0.0
+    return dot / (norm1 * norm2)
 
 
 def search_fts_branch(db: Session, query_terms: List[str], limit: int = 25) -> List[Tuple[App, float]]:
@@ -350,58 +393,68 @@ def search_fts_branch(db: Session, query_terms: List[str], limit: int = 25) -> L
 
     substantive = [t for t in query_terms if t not in STOP_WORDS]
     eval_terms = substantive if substantive else query_terms
+    specific_terms = [t for t in eval_terms if t not in GENERIC_TERMS and light_stem(t) not in GENERIC_TERMS]
 
     apps = db.query(App).filter(App.is_delisted == False).all()
     results = []
     total_terms = len(eval_terms)
 
     for app in apps:
-        search_text = f"{app.name} {app.summary} {app.description}".lower()
-        cap_texts = [cap.capability.lower() for cap in app.capabilities]
-        all_words = set(re.findall(r"\w+", search_text + " " + " ".join(cap_texts)))
-        all_stems = {light_stem(w) for w in all_words}
+        name_words = set(re.findall(r"\w+", app.name.lower()))
+        name_stems = {light_stem(w) for w in name_words}
+        summary_words = set(re.findall(r"\w+", app.summary.lower()))
+        summary_stems = {light_stem(w) for w in summary_words}
+        desc_words = set(re.findall(r"\w+", app.description.lower()))
+        desc_stems = {light_stem(w) for w in desc_words}
+
+        cap_word_list = []
+        for cap in app.capabilities:
+            cap_w = set(re.findall(r"\w+", cap.capability.lower()))
+            cap_s = {light_stem(w) for w in cap_w}
+            cap_word_list.append((cap_w, cap_s))
 
         matched_term_count = 0
+        specific_term_matches = 0
         score = 0.0
 
         for term in eval_terms:
             t_stem = light_stem(term)
             term_matched = False
 
-            if term in app.name.lower() or t_stem in app.name.lower():
-                score += 4.0
+            if term in name_words or t_stem in name_stems:
+                score += 5.0
                 term_matched = True
-            if term in app.summary.lower() or t_stem in app.summary.lower():
-                score += 2.5
+            if term in summary_words or t_stem in summary_stems:
+                score += 3.0
                 term_matched = True
-            if term in app.description.lower() or t_stem in app.description.lower():
-                score += 1.5
-                term_matched = True
-
-            for cap_t in cap_texts:
-                if term in cap_t or t_stem in cap_t:
-                    score += 3.0
+            for cap_w, cap_s in cap_word_list:
+                if term in cap_w or t_stem in cap_s:
+                    score += 3.5
                     term_matched = True
                     break
-
-            if not term_matched and (term in all_words or t_stem in all_stems):
-                score += 1.0
+            if term in desc_words or t_stem in desc_stems:
+                score += 1.5
                 term_matched = True
 
             if term_matched:
                 matched_term_count += 1
+                if term in specific_terms:
+                    specific_term_matches += 1
+
+        # Gating: If query has substantive specific terms, matching ONLY generic terms (like 'files') gives 0 score
+        if specific_terms and specific_term_matches == 0:
+            continue
 
         # Multi-word queries require meaningful term coverage
         if total_terms >= 2:
             coverage = matched_term_count / float(total_terms)
-            name_lower = app.name.lower()
-            has_name_match = any(t in name_lower or light_stem(t) in name_lower for t in eval_terms)
+            has_name_match = any(t in name_words or light_stem(t) in name_stems for t in eval_terms)
             if coverage < 0.30 and not has_name_match:
                 continue
             # Coordination factor: reward full coverage of query terms
             score = score * (0.4 + 0.6 * coverage)
             if matched_term_count == total_terms:
-                score += 3.0
+                score += 3.5
 
         if score > 0:
             results.append((app, score))
@@ -415,7 +468,7 @@ def search_trigram_branch(db: Session, query_str: str, threshold: float = 0.35, 
     if not query_str or len(query_str) < 3:
         return []
 
-    words_in_q = query_str.lower().split()
+    words_in_q = [w for w in query_str.lower().split() if w not in STOP_WORDS]
     apps = db.query(App).filter(App.is_delisted == False).all()
     candidates = []
 
@@ -425,22 +478,16 @@ def search_trigram_branch(db: Session, query_str: str, threshold: float = 0.35, 
         sim_name = trigram_sim(query_str, app.name)
         max_sim = max(max_sim, sim_name)
 
-        # For single-word / typo queries, compare with individual words
-        if len(words_in_q) <= 2:
-            for cap in app.capabilities:
-                sim_cap = trigram_sim(query_str, cap.capability)
-                max_sim = max(max_sim, sim_cap)
-
-            words = app.summary.lower().split()
-            for w in words:
-                if len(w) >= 3:
-                    sim_w = trigram_sim(query_str, w)
-                    max_sim = max(max_sim, sim_w)
-        else:
-            # For multi-word queries, compare against capabilities phrases
-            for cap in app.capabilities:
-                sim_cap = trigram_sim(query_str, cap.capability)
-                max_sim = max(max_sim, sim_cap)
+        # Word-level comparisons against name, slug, and capabilities
+        for w in words_in_q:
+            if len(w) >= 3:
+                sim_w_name = trigram_sim(w, app.name)
+                max_sim = max(max_sim, sim_w_name)
+                sim_w_slug = trigram_sim(w, app.slug)
+                max_sim = max(max_sim, sim_w_slug)
+                for cap in app.capabilities:
+                    sim_cap = trigram_sim(w, cap.capability)
+                    max_sim = max(max_sim, sim_cap)
 
         if max_sim >= threshold:
             candidates.append((app, max_sim))
@@ -483,9 +530,9 @@ def execute_hybrid_search(
     """
     Execute hybrid search pipeline:
     1. Parse constraints and normalize query.
-    2. Detect taxonomy categories and aliases.
+    2. Detect taxonomy categories and aliases with non-overlapping span extraction.
     3. Run 3 branches (FTS, Trigram, Vector), capped at 25 each.
-    4. Reciprocal Rank Fusion (RRF) with category & capability match bonuses.
+    4. Reciprocal Rank Fusion (RRF) with primary category & compound capability match bonuses.
     5. Hard filtering by platform and license.
     6. Return deduplicated, scored results with evidence.
     """
@@ -494,12 +541,15 @@ def execute_hybrid_search(
     filter_license = license_state or detected_constraints.get("license_state")
 
     matched_categories, detected_cat_names = match_categories_and_aliases(db, clean_query)
-    matched_cat_ids = {c.id for c in matched_categories}
+    specific_cat_ids = {c.id for c in matched_categories if c.parent_id is not None}
+    broad_parent_cat_ids = {c.id for c in matched_categories if c.parent_id is None}
+    all_matched_cat_ids = {c.id for c in matched_categories}
 
-    # Add child category IDs if broad category matched
+    # Expand broad parent categories to their children
     for cat in matched_categories:
-        for sub in cat.subcategories:
-            matched_cat_ids.add(sub.id)
+        if cat.parent_id is None:
+            for sub in cat.subcategories:
+                all_matched_cat_ids.add(sub.id)
 
     query_terms = [t for t in clean_query.split() if len(t) > 1]
     substantive_terms = [t for t in query_terms if t not in STOP_WORDS]
@@ -530,39 +580,86 @@ def execute_hybrid_search(
     add_branch_ranks(trigram_branch, "trigram")
     add_branch_ranks(vector_branch, "semantic")
 
-    # Category matching bonus
     is_broad_topic = len(eval_terms) <= 2 or any(clean_query == c.name.lower() for c in matched_categories)
-    if matched_cat_ids:
+
+    # 1. Category Matching & Affinity
+    if all_matched_cat_ids:
         for app in db.query(App).filter(App.is_delisted == False).all():
+            app_id = app.id
+            app_primary_id = app.primary_category_id
             app_cat_ids = {ac.category_id for ac in app.categories}
-            if app.primary_category_id:
-                app_cat_ids.add(app.primary_category_id)
-            if matched_cat_ids.intersection(app_cat_ids):
-                app_id = app.id
-                if app_id in app_scores or is_broad_topic:
-                    app_objects[app_id] = app
-                    if app_id not in app_scores:
-                        app_scores[app_id] = 0.0
-                        app_sources[app_id] = set()
-                    app_scores[app_id] += 0.025  # Category relevance bonus
-                    app_sources[app_id].add("category_match")
 
-    # Capability matching bonus
-    for app_id, app in app_objects.items():
-        for cap in app.capabilities:
-            cap_lower = cap.capability.lower()
-            if any(term in cap_lower or light_stem(term) in cap_lower for term in eval_terms):
+            # Only consider apps that matched a retrieval branch OR when it's a broad topic search
+            if app_id not in app_scores and not is_broad_topic:
+                continue
+
+            app_objects[app_id] = app
+            if app_id not in app_scores:
+                app_scores[app_id] = 0.0
+                app_sources[app_id] = set()
+
+            # Direct Specific Subcategory match on primary category
+            if app_primary_id in specific_cat_ids:
+                app_scores[app_id] += 0.048
+                app_sources[app_id].add("primary_category_match")
+            # Specific Subcategory match on secondary category
+            elif specific_cat_ids.intersection(app_cat_ids):
+                app_scores[app_id] += 0.022
+                app_sources[app_id].add("secondary_category_match")
+            # Broad Parent Category match on primary category
+            elif app.primary_category and app.primary_category.parent_id in broad_parent_cat_ids:
+                app_scores[app_id] += 0.038
+                app_sources[app_id].add("broad_parent_primary_match")
+            # Umbrella / Broad match
+            elif all_matched_cat_ids.intersection(app_cat_ids | ({app_primary_id} if app_primary_id else set())):
                 app_scores[app_id] += 0.015
-                app_sources[app_id].add("capability_match")
+                app_sources[app_id].add("category_match")
 
-    # Term coverage bonus: prioritize apps that match ALL distinct query terms
+    # 2. Capability Matching: Direct Compound vs Incidental
+    for app_id, app in app_objects.items():
+        max_cap_terms = 0
+        for cap in app.capabilities:
+            cap_words = set(re.findall(r"\w+", cap.capability.lower()))
+            cap_stems = {light_stem(w) for w in cap_words}
+            matched_in_cap = sum(1 for t in eval_terms if t in cap_words or light_stem(t) in cap_stems)
+            max_cap_terms = max(max_cap_terms, matched_in_cap)
+
+        if max_cap_terms >= 2:
+            # Direct Compound Capability match
+            app_scores[app_id] += 0.055
+            app_sources[app_id].add("direct_capability_match")
+        elif max_cap_terms == 1:
+            # Incidental capability match
+            app_scores[app_id] += 0.015
+            app_sources[app_id].add("capability_match")
+
+    # 3. Named Entity / Typo Name Match Bonus
+    for app_id, app in app_objects.items():
+        app_name_lower = app.name.lower()
+        app_slug = app.slug.lower()
+        sim_full = trigram_sim(clean_query, app_name_lower)
+        sim_words = max([trigram_sim(w, app_name_lower) for w in clean_query.split() if len(w) >= 3] + [0.0])
+        sim_slug = max([trigram_sim(w, app_slug) for w in clean_query.split() if len(w) >= 3] + [0.0])
+        best_name_sim = max(sim_full, sim_words, sim_slug)
+
+        if best_name_sim >= 0.65:
+            bonus = 0.045 * best_name_sim
+            app_scores[app_id] += bonus
+            app_sources[app_id].add("named_entity_match")
+
+    # 4. Multi-term coverage bonus
     if len(eval_terms) >= 2:
         for app_id, app in app_objects.items():
             full_text = f"{app.name} {app.summary} {app.description}".lower()
-            caps_text = " ".join(c.capability.lower() for c in app.capabilities)
-            combined = f"{full_text} {caps_text}"
+            all_text_words = set(re.findall(r"\w+", full_text))
+            all_text_stems = {light_stem(w) for w in all_text_words}
+            for cap in app.capabilities:
+                c_words = set(re.findall(r"\w+", cap.capability.lower()))
+                all_text_words.update(c_words)
+                all_text_stems.update({light_stem(w) for w in c_words})
+
             all_terms_matched = all(
-                t in combined or light_stem(t) in combined
+                t in all_text_words or light_stem(t) in all_text_stems
                 for t in eval_terms
             )
             if all_terms_matched:
@@ -598,7 +695,7 @@ def execute_hybrid_search(
     metadata = {
         "clean_query": clean_query,
         "detected_categories": detected_cat_names,
-        "matched_category_ids": list(matched_cat_ids),
+        "matched_category_ids": list(all_matched_cat_ids),
         "applied_filters": {
             "platform": filter_platform,
             "license_state": filter_license,

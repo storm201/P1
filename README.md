@@ -135,7 +135,18 @@ ALERT_FAILURE_THRESHOLD=3
 
 ---
 
-## 🧪 Automated Test Suite (42 Tests, 100% Pass)
+### 6. Search Quality Sprint & Precision Architecture
+- **Non-Overlapping Longest-Span Taxonomy Extraction**: Eliminates spurious nested alias collisions (e.g., `editor` mapping to `Developer Tools` when part of `photo editor` or `audio editor`).
+- **Primary Category Affinity**: Distinguishes direct specific subcategory matches on `primary_category_id` (+0.048) from secondary (+0.022) or broad parent (+0.038) matches.
+- **Compound Capability Matching**: Distinguishes direct compound task matches ($\ge 2$ task terms in the same capability, +0.055) from incidental single-word matches (+0.015).
+- **Domain vs Generic Term Gating**: Distinguishes domain terms (`photo`, `backup`, `duplicate`, `audio`) from generic role/container terms (`manager`, `files`, `tool`), rejecting apps that only match generic nouns.
+- **Agentive Noun & Verb Stemming**: Supports `-er` and `-or` suffix normalization (`broadcaster` $\leftrightarrow$ `broadcast`, `cleaner` $\leftrightarrow$ `clean`, `player` $\leftrightarrow$ `play`, `recorder` $\leftrightarrow$ `record`).
+- **Phrasal Verb Normalization**: Normalizes colloquial verbs (`back up` $\rightarrow$ `backup`, `clean up` $\rightarrow$ `cleanup`, `set up` $\rightarrow$ `setup`).
+- **Strict Constraint Enforcement**: Enforces platform and license filters without leakage; preserves zero results on unknown/out-of-domain queries.
+
+---
+
+## 🧪 Automated Test Suite (60 Tests, 100% Pass)
 
 Run all tests:
 ```powershell
@@ -144,9 +155,13 @@ pytest -v
 ```
 
 ### Test Coverage Highlights:
+- **`test_search_quality.py`** (18 tests): Regression test suite covering `open-source photo editor for Linux`, `organize and back up my photos`, `find duplicate audio files`, `music`, `storage`, typo-tolerant queries (`audaciti`, `czkawk`, `imich photos`, `kopya backup`, `blechbit`, `vls media`, `obz studio recorder`), platform and license constraint filtering, and unknown query zero-fabrication.
+- **`test_evaluation.py`** (1 test): Rigorous benchmark evaluation exceeding all acceptance floors:
+  - **Development Benchmark**: nDCG@5 = **0.85** (Floor $\ge$ 0.70), P@5 = **0.70** (Floor $\ge$ 0.60), Task Success = **1.00** (Floor $\ge$ 0.80), Unknowns Handled = **1.00** (100%).
+  - **Held-Out Benchmark**: nDCG@5 = **0.89** (Floor $\ge$ 0.70), P@5 = **0.71** (Floor $\ge$ 0.60), Task Success = **1.00** (Floor $\ge$ 0.80), Unknowns Handled = **1.00** (100%).
 - **`test_scheduler_and_sync.py`** (16 tests): Eligible job creation, duplicate scheduling prevention, atomic concurrency claiming, website check persistence, honest failure recording, bounded backoff, stale transitions, interrupted job lock recovery, GitHub rate limit budget ceiling (150 requests), conditional ETag requests (HTTP 304), release deduplication, honest missing assets, SSRF protection on asset URLs, delisted app filtering, fail-closed operator auth, and scheduler telemetry visibility.
 - **`test_semantic_retrieval.py`** (5 tests): Encoder independence, neural status reporting, incompatible model rejection, re-embedding migration, and lexical search fallback when encoder is unavailable.
 - **`test_security_audit.py`** (6 tests): SSRF prevention for IPv4 and IPv6 CIDRs, redirect hop intercept, header-based operator auth, and HTML input escaping.
 - **`test_ops_worker.py`** (4 tests): Worker job lifecycle, fail-closed ops endpoint, persistent job states, and correction resolution workflow.
 - **`test_stage1a.py`** (10 tests): Health check, catalog seed verification, hybrid retrieval, detail modal data, and live verification check.
-- **`test_evaluation.py`** (1 test): Search benchmark (nDCG@5 = 0.76 dev / 0.81 held-out, task success >= 80%).
+
