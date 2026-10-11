@@ -1,0 +1,1343 @@
+{
+  "development": {
+    "per_query_details": [
+      {
+        "id": "dev_01",
+        "query": "music",
+        "type": "broad_topic",
+        "is_unknown": false,
+        "returned_slugs": [
+          "strawberry",
+          "musescore",
+          "kodi",
+          "jellyfin",
+          "ardour"
+        ],
+        "grades": [
+          3,
+          3,
+          2,
+          2,
+          3
+        ],
+        "ideal_grades": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "actual_dcg": 16.9165,
+        "ideal_dcg": 20.6392,
+        "ndcg_at_5": 0.8196,
+        "pat5_numerator": 5,
+        "pat5_denominator": 5,
+        "pat5_ratio": "5/5",
+        "p_at_5": 1.0,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "dev_02",
+        "query": "storage",
+        "type": "broad_topic",
+        "is_unknown": false,
+        "returned_slugs": [
+          "kopia",
+          "duplicati",
+          "nextcloud-desktop",
+          "cyberduck",
+          "bleachbit"
+        ],
+        "grades": [
+          3,
+          3,
+          2,
+          2,
+          3
+        ],
+        "ideal_grades": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "actual_dcg": 16.9165,
+        "ideal_dcg": 20.6392,
+        "ndcg_at_5": 0.8196,
+        "pat5_numerator": 5,
+        "pat5_denominator": 5,
+        "pat5_ratio": "5/5",
+        "p_at_5": 1.0,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "dev_03",
+        "query": "organize my photos",
+        "type": "specific_task",
+        "is_unknown": false,
+        "returned_slugs": [
+          "immich",
+          "darktable",
+          "gimp",
+          "blender",
+          "inkscape"
+        ],
+        "grades": [
+          3,
+          3,
+          2,
+          0,
+          0
+        ],
+        "ideal_grades": [
+          3,
+          3,
+          2,
+          2,
+          1
+        ],
+        "actual_dcg": 12.9165,
+        "ideal_dcg": 14.5954,
+        "ndcg_at_5": 0.885,
+        "pat5_numerator": 3,
+        "pat5_denominator": 5,
+        "pat5_ratio": "3/5",
+        "p_at_5": 0.6,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "dev_04",
+        "query": "find duplicate audio files",
+        "type": "specific_task",
+        "is_unknown": false,
+        "returned_slugs": [
+          "czkawka",
+          "duplicati",
+          "strawberry",
+          "vlc"
+        ],
+        "grades": [
+          3,
+          0,
+          0,
+          0
+        ],
+        "ideal_grades": [
+          3,
+          1
+        ],
+        "actual_dcg": 7.0,
+        "ideal_dcg": 7.6309,
+        "ndcg_at_5": 0.9173,
+        "pat5_numerator": 1,
+        "pat5_denominator": 4,
+        "pat5_ratio": "1/4",
+        "p_at_5": 0.25,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "dev_05",
+        "query": "open-source photo editor for Linux",
+        "type": "platform_and_license_constraint",
+        "is_unknown": false,
+        "returned_slugs": [
+          "gimp",
+          "rawtherapee",
+          "inkscape",
+          "darktable",
+          "krita"
+        ],
+        "grades": [
+          3,
+          3,
+          2,
+          3,
+          3
+        ],
+        "ideal_grades": [
+          3,
+          3,
+          3,
+          3,
+          2
+        ],
+        "actual_dcg": 18.6392,
+        "ideal_dcg": 19.0918,
+        "ndcg_at_5": 0.9763,
+        "pat5_numerator": 5,
+        "pat5_denominator": 5,
+        "pat5_ratio": "5/5",
+        "p_at_5": 1.0,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "dev_06",
+        "query": "audio editor",
+        "type": "specific_task",
+        "is_unknown": false,
+        "returned_slugs": [
+          "audacity",
+          "ardour",
+          "kdenlive",
+          "shotcut",
+          "strawberry"
+        ],
+        "grades": [
+          3,
+          3,
+          0,
+          0,
+          1
+        ],
+        "ideal_grades": [
+          3,
+          3,
+          2,
+          1,
+          1
+        ],
+        "actual_dcg": 11.8034,
+        "ideal_dcg": 13.734,
+        "ndcg_at_5": 0.8594,
+        "pat5_numerator": 2,
+        "pat5_denominator": 5,
+        "pat5_ratio": "2/5",
+        "p_at_5": 0.4,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "dev_07",
+        "query": "media player",
+        "type": "specific_task",
+        "is_unknown": false,
+        "returned_slugs": [
+          "vlc",
+          "kodi",
+          "mpv",
+          "jellyfin",
+          "strawberry"
+        ],
+        "grades": [
+          3,
+          3,
+          3,
+          2,
+          3
+        ],
+        "ideal_grades": [
+          3,
+          3,
+          3,
+          3,
+          2
+        ],
+        "actual_dcg": 18.9165,
+        "ideal_dcg": 19.0918,
+        "ndcg_at_5": 0.9908,
+        "pat5_numerator": 5,
+        "pat5_denominator": 5,
+        "pat5_ratio": "5/5",
+        "p_at_5": 1.0,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "dev_08",
+        "query": "screen recorder",
+        "type": "specific_task",
+        "is_unknown": false,
+        "returned_slugs": [
+          "sharex",
+          "obs-studio",
+          "flameshot",
+          "audacity",
+          "kodi"
+        ],
+        "grades": [
+          3,
+          3,
+          2,
+          0,
+          0
+        ],
+        "ideal_grades": [
+          3,
+          3,
+          2,
+          1
+        ],
+        "actual_dcg": 12.9165,
+        "ideal_dcg": 13.3472,
+        "ndcg_at_5": 0.9677,
+        "pat5_numerator": 3,
+        "pat5_denominator": 5,
+        "pat5_ratio": "3/5",
+        "p_at_5": 0.6,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "dev_09",
+        "query": "live streaming software",
+        "type": "specific_task",
+        "is_unknown": false,
+        "returned_slugs": [
+          "obs-studio",
+          "wireshark",
+          "kodi",
+          "sharex",
+          "flameshot"
+        ],
+        "grades": [
+          3,
+          0,
+          2,
+          0,
+          0
+        ],
+        "ideal_grades": [
+          3,
+          2,
+          2
+        ],
+        "actual_dcg": 8.5,
+        "ideal_dcg": 10.3928,
+        "ndcg_at_5": 0.8179,
+        "pat5_numerator": 2,
+        "pat5_denominator": 5,
+        "pat5_ratio": "2/5",
+        "p_at_5": 0.4,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "dev_10",
+        "query": "clean disk space",
+        "type": "specific_task",
+        "is_unknown": false,
+        "returned_slugs": [
+          "bleachbit",
+          "czkawka",
+          "kopia",
+          "libreoffice"
+        ],
+        "grades": [
+          3,
+          3,
+          0,
+          0
+        ],
+        "ideal_grades": [
+          3,
+          3,
+          2,
+          1
+        ],
+        "actual_dcg": 11.4165,
+        "ideal_dcg": 13.3472,
+        "ndcg_at_5": 0.8553,
+        "pat5_numerator": 2,
+        "pat5_denominator": 4,
+        "pat5_ratio": "2/4",
+        "p_at_5": 0.5,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "dev_11",
+        "query": "shred temporary files",
+        "type": "specific_task",
+        "is_unknown": false,
+        "returned_slugs": [
+          "bleachbit",
+          "czkawka"
+        ],
+        "grades": [
+          3,
+          2
+        ],
+        "ideal_grades": [
+          3,
+          2
+        ],
+        "actual_dcg": 8.8928,
+        "ideal_dcg": 8.8928,
+        "ndcg_at_5": 1.0,
+        "pat5_numerator": 2,
+        "pat5_denominator": 2,
+        "pat5_ratio": "2/2",
+        "p_at_5": 1.0,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "dev_12",
+        "query": "encrypted cloud backup",
+        "type": "specific_task",
+        "is_unknown": false,
+        "returned_slugs": [
+          "duplicati",
+          "restic",
+          "kopia",
+          "borgbackup",
+          "syncthing"
+        ],
+        "grades": [
+          3,
+          3,
+          3,
+          3,
+          0
+        ],
+        "ideal_grades": [
+          3,
+          3,
+          3,
+          3,
+          2
+        ],
+        "actual_dcg": 17.9312,
+        "ideal_dcg": 19.0918,
+        "ndcg_at_5": 0.9392,
+        "pat5_numerator": 4,
+        "pat5_denominator": 5,
+        "pat5_ratio": "4/5",
+        "p_at_5": 0.8,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "dev_13",
+        "query": "find similar images",
+        "type": "specific_task",
+        "is_unknown": false,
+        "returned_slugs": [
+          "czkawka",
+          "darktable",
+          "rawtherapee",
+          "sharex"
+        ],
+        "grades": [
+          3,
+          1,
+          0,
+          0
+        ],
+        "ideal_grades": [
+          3,
+          2,
+          1
+        ],
+        "actual_dcg": 7.6309,
+        "ideal_dcg": 9.3928,
+        "ndcg_at_5": 0.8124,
+        "pat5_numerator": 1,
+        "pat5_denominator": 4,
+        "pat5_ratio": "1/4",
+        "p_at_5": 0.25,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "dev_14",
+        "query": "remove empty folders",
+        "type": "specific_task",
+        "is_unknown": false,
+        "returned_slugs": [
+          "czkawka",
+          "thunderbird"
+        ],
+        "grades": [
+          3,
+          0
+        ],
+        "ideal_grades": [
+          3,
+          2
+        ],
+        "actual_dcg": 7.0,
+        "ideal_dcg": 8.8928,
+        "ndcg_at_5": 0.7872,
+        "pat5_numerator": 1,
+        "pat5_denominator": 2,
+        "pat5_ratio": "1/2",
+        "p_at_5": 0.5,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "dev_15",
+        "query": "self hosted photo gallery",
+        "type": "specific_task",
+        "is_unknown": false,
+        "returned_slugs": [
+          "immich",
+          "nextcloud-desktop"
+        ],
+        "grades": [
+          3,
+          2
+        ],
+        "ideal_grades": [
+          3,
+          2,
+          2
+        ],
+        "actual_dcg": 8.8928,
+        "ideal_dcg": 10.3928,
+        "ndcg_at_5": 0.8557,
+        "pat5_numerator": 2,
+        "pat5_denominator": 2,
+        "pat5_ratio": "2/2",
+        "p_at_5": 1.0,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "dev_16",
+        "query": "home theater pc",
+        "type": "specific_task",
+        "is_unknown": false,
+        "returned_slugs": [
+          "kodi",
+          "lmms"
+        ],
+        "grades": [
+          3,
+          0
+        ],
+        "ideal_grades": [
+          3,
+          3,
+          2,
+          2
+        ],
+        "actual_dcg": 7.0,
+        "ideal_dcg": 14.2085,
+        "ndcg_at_5": 0.4927,
+        "pat5_numerator": 1,
+        "pat5_denominator": 2,
+        "pat5_ratio": "1/2",
+        "p_at_5": 0.5,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "dev_17",
+        "query": "extract zip archives",
+        "type": "specific_task",
+        "is_unknown": false,
+        "returned_slugs": [
+          "7-zip",
+          "peazip"
+        ],
+        "grades": [
+          3,
+          3
+        ],
+        "ideal_grades": [
+          3,
+          3
+        ],
+        "actual_dcg": 11.4165,
+        "ideal_dcg": 11.4165,
+        "ndcg_at_5": 1.0,
+        "pat5_numerator": 2,
+        "pat5_denominator": 2,
+        "pat5_ratio": "2/2",
+        "p_at_5": 1.0,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "dev_18",
+        "query": "multi track sound recording",
+        "type": "specific_task",
+        "is_unknown": false,
+        "returned_slugs": [
+          "audacity",
+          "ardour",
+          "kdenlive"
+        ],
+        "grades": [
+          3,
+          3,
+          0
+        ],
+        "ideal_grades": [
+          3,
+          3,
+          2
+        ],
+        "actual_dcg": 11.4165,
+        "ideal_dcg": 12.9165,
+        "ndcg_at_5": 0.8839,
+        "pat5_numerator": 2,
+        "pat5_denominator": 3,
+        "pat5_ratio": "2/3",
+        "p_at_5": 0.6667,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "dev_19",
+        "query": "audaciti",
+        "type": "typo",
+        "is_unknown": false,
+        "returned_slugs": [
+          "audacity"
+        ],
+        "grades": [
+          3
+        ],
+        "ideal_grades": [
+          3,
+          2,
+          1
+        ],
+        "actual_dcg": 7.0,
+        "ideal_dcg": 9.3928,
+        "ndcg_at_5": 0.7453,
+        "pat5_numerator": 1,
+        "pat5_denominator": 1,
+        "pat5_ratio": "1/1",
+        "p_at_5": 1.0,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "dev_20",
+        "query": "blechbit",
+        "type": "typo",
+        "is_unknown": false,
+        "returned_slugs": [
+          "bleachbit"
+        ],
+        "grades": [
+          3
+        ],
+        "ideal_grades": [
+          3,
+          2
+        ],
+        "actual_dcg": 7.0,
+        "ideal_dcg": 8.8928,
+        "ndcg_at_5": 0.7872,
+        "pat5_numerator": 1,
+        "pat5_denominator": 1,
+        "pat5_ratio": "1/1",
+        "p_at_5": 1.0,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "dev_21",
+        "query": "czkawk",
+        "type": "typo",
+        "is_unknown": false,
+        "returned_slugs": [
+          "czkawka"
+        ],
+        "grades": [
+          3
+        ],
+        "ideal_grades": [
+          3,
+          2
+        ],
+        "actual_dcg": 7.0,
+        "ideal_dcg": 8.8928,
+        "ndcg_at_5": 0.7872,
+        "pat5_numerator": 1,
+        "pat5_denominator": 1,
+        "pat5_ratio": "1/1",
+        "p_at_5": 1.0,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "dev_22",
+        "query": "kopya backup",
+        "type": "typo",
+        "is_unknown": false,
+        "returned_slugs": [
+          "kopia",
+          "borgbackup",
+          "restic",
+          "duplicati",
+          "syncthing"
+        ],
+        "grades": [
+          3,
+          2,
+          2,
+          2,
+          0
+        ],
+        "ideal_grades": [
+          3,
+          2,
+          2,
+          2
+        ],
+        "actual_dcg": 11.6848,
+        "ideal_dcg": 11.6848,
+        "ndcg_at_5": 1.0,
+        "pat5_numerator": 4,
+        "pat5_denominator": 5,
+        "pat5_ratio": "4/5",
+        "p_at_5": 0.8,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "dev_23",
+        "query": "imich photos",
+        "type": "typo",
+        "is_unknown": false,
+        "returned_slugs": [
+          "immich",
+          "gimp",
+          "darktable",
+          "rawtherapee",
+          "blender"
+        ],
+        "grades": [
+          3,
+          1,
+          2,
+          2,
+          0
+        ],
+        "ideal_grades": [
+          3,
+          2,
+          2,
+          1
+        ],
+        "actual_dcg": 10.423,
+        "ideal_dcg": 10.8235,
+        "ndcg_at_5": 0.963,
+        "pat5_numerator": 3,
+        "pat5_denominator": 5,
+        "pat5_ratio": "3/5",
+        "p_at_5": 0.6,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "dev_24",
+        "query": "video broadcast for windows",
+        "type": "platform_constraint",
+        "is_unknown": false,
+        "returned_slugs": [
+          "obs-studio",
+          "kdenlive",
+          "handbrake",
+          "shotcut",
+          "sharex"
+        ],
+        "grades": [
+          3,
+          1,
+          0,
+          1,
+          2
+        ],
+        "ideal_grades": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "actual_dcg": 9.2222,
+        "ideal_dcg": 9.8235,
+        "ndcg_at_5": 0.9388,
+        "pat5_numerator": 2,
+        "pat5_denominator": 5,
+        "pat5_ratio": "2/5",
+        "p_at_5": 0.4,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "dev_25",
+        "query": "backup tool for macos",
+        "type": "platform_constraint",
+        "is_unknown": false,
+        "returned_slugs": [
+          "kopia",
+          "borgbackup",
+          "restic",
+          "duplicati",
+          "syncthing"
+        ],
+        "grades": [
+          3,
+          3,
+          3,
+          3,
+          2
+        ],
+        "ideal_grades": [
+          3,
+          3,
+          3,
+          3,
+          2
+        ],
+        "actual_dcg": 19.0918,
+        "ideal_dcg": 19.0918,
+        "ndcg_at_5": 1.0,
+        "pat5_numerator": 5,
+        "pat5_denominator": 5,
+        "pat5_ratio": "5/5",
+        "p_at_5": 1.0,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "dev_26",
+        "query": "play movies with subtitles",
+        "type": "specific_task",
+        "is_unknown": false,
+        "returned_slugs": [
+          "kdenlive",
+          "kodi",
+          "jellyfin",
+          "vlc",
+          "strawberry"
+        ],
+        "grades": [
+          0,
+          3,
+          2,
+          3,
+          1
+        ],
+        "ideal_grades": [
+          3,
+          3,
+          3,
+          2,
+          1
+        ],
+        "actual_dcg": 9.3181,
+        "ideal_dcg": 16.5954,
+        "ndcg_at_5": 0.5615,
+        "pat5_numerator": 3,
+        "pat5_denominator": 5,
+        "pat5_ratio": "3/5",
+        "p_at_5": 0.6,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "dev_27",
+        "query": "image retouching layers",
+        "type": "specific_task",
+        "is_unknown": false,
+        "returned_slugs": [
+          "gimp",
+          "darktable",
+          "sharex",
+          "czkawka",
+          "immich"
+        ],
+        "grades": [
+          3,
+          2,
+          0,
+          0,
+          0
+        ],
+        "ideal_grades": [
+          3,
+          3,
+          2,
+          2
+        ],
+        "actual_dcg": 8.8928,
+        "ideal_dcg": 14.2085,
+        "ndcg_at_5": 0.6259,
+        "pat5_numerator": 2,
+        "pat5_denominator": 5,
+        "pat5_ratio": "2/5",
+        "p_at_5": 0.4,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "dev_28",
+        "query": "compress 7z files with encryption",
+        "type": "specific_task",
+        "is_unknown": false,
+        "returned_slugs": [
+          "7-zip",
+          "duplicati",
+          "kopia",
+          "borgbackup",
+          "thunderbird"
+        ],
+        "grades": [
+          3,
+          0,
+          2,
+          0,
+          0
+        ],
+        "ideal_grades": [
+          3,
+          3,
+          2
+        ],
+        "actual_dcg": 8.5,
+        "ideal_dcg": 12.9165,
+        "ndcg_at_5": 0.6581,
+        "pat5_numerator": 2,
+        "pat5_denominator": 5,
+        "pat5_ratio": "2/5",
+        "p_at_5": 0.4,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "dev_29",
+        "query": "quantum teleportation reactor controller",
+        "type": "unknown_query",
+        "is_unknown": true,
+        "returned_count": 0,
+        "passed": true,
+        "ratio": "1/1"
+      },
+      {
+        "id": "dev_30",
+        "query": "interstellar spacecraft warp drive firmware",
+        "type": "unknown_query",
+        "is_unknown": true,
+        "returned_count": 0,
+        "passed": true,
+        "ratio": "1/1"
+      }
+    ],
+    "aggregates": {
+      "eligible_queries": 28,
+      "unknown_queries": 2,
+      "mean_ndcg_recomputed": 0.8481,
+      "mean_ndcg_reported": 0.85,
+      "mean_pat5_recomputed": 0.7024,
+      "mean_pat5_reported": 0.7,
+      "pooled_pat5": 0.6667,
+      "pooled_pat5_num": 72,
+      "pooled_pat5_denom": 108,
+      "task_success_rate_recomputed": 1.0,
+      "task_success_rate_reported": 1.0,
+      "task_success_num": 28,
+      "task_success_denom": 28,
+      "unknown_accuracy_recomputed": 1.0,
+      "unknown_accuracy_reported": 1.0,
+      "unknown_accuracy_num": 2,
+      "unknown_accuracy_denom": 2
+    }
+  },
+  "held_out": {
+    "per_query_details": [
+      {
+        "id": "held_01",
+        "query": "listen to podcasts and mp3",
+        "type": "specific_task",
+        "is_unknown": false,
+        "returned_slugs": [
+          "strawberry"
+        ],
+        "grades": [
+          3
+        ],
+        "ideal_grades": [
+          3,
+          3,
+          2,
+          2,
+          1
+        ],
+        "actual_dcg": 7.0,
+        "ideal_dcg": 14.5954,
+        "ndcg_at_5": 0.4796,
+        "pat5_numerator": 1,
+        "pat5_denominator": 1,
+        "pat5_ratio": "1/1",
+        "p_at_5": 1.0,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "held_02",
+        "query": "wipe free disk space",
+        "type": "specific_task",
+        "is_unknown": false,
+        "returned_slugs": [
+          "bleachbit",
+          "czkawka",
+          "freecad"
+        ],
+        "grades": [
+          3,
+          2,
+          0
+        ],
+        "ideal_grades": [
+          3,
+          2
+        ],
+        "actual_dcg": 8.8928,
+        "ideal_dcg": 8.8928,
+        "ndcg_at_5": 1.0,
+        "pat5_numerator": 2,
+        "pat5_denominator": 3,
+        "pat5_ratio": "2/3",
+        "p_at_5": 0.6667,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "held_03",
+        "query": "client side deduplicated backups",
+        "type": "specific_task",
+        "is_unknown": false,
+        "returned_slugs": [
+          "kopia",
+          "duplicati",
+          "cyberduck",
+          "borgbackup",
+          "restic"
+        ],
+        "grades": [
+          3,
+          2,
+          0,
+          3,
+          3
+        ],
+        "ideal_grades": [
+          3,
+          3,
+          3,
+          2
+        ],
+        "actual_dcg": 14.6155,
+        "ideal_dcg": 16.2085,
+        "ndcg_at_5": 0.9017,
+        "pat5_numerator": 4,
+        "pat5_denominator": 5,
+        "pat5_ratio": "4/5",
+        "p_at_5": 0.8,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "held_04",
+        "query": "detect zeroed and empty files",
+        "type": "specific_task",
+        "is_unknown": false,
+        "returned_slugs": [
+          "czkawka"
+        ],
+        "grades": [
+          3
+        ],
+        "ideal_grades": [
+          3,
+          2
+        ],
+        "actual_dcg": 7.0,
+        "ideal_dcg": 8.8928,
+        "ndcg_at_5": 0.7872,
+        "pat5_numerator": 1,
+        "pat5_denominator": 1,
+        "pat5_ratio": "1/1",
+        "p_at_5": 1.0,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "held_05",
+        "query": "gnome photo editor",
+        "type": "specific_task",
+        "is_unknown": false,
+        "returned_slugs": [
+          "gimp",
+          "inkscape",
+          "rawtherapee",
+          "darktable",
+          "audacity"
+        ],
+        "grades": [
+          3,
+          1,
+          2,
+          2,
+          0
+        ],
+        "ideal_grades": [
+          3,
+          2,
+          2,
+          1
+        ],
+        "actual_dcg": 10.423,
+        "ideal_dcg": 10.8235,
+        "ndcg_at_5": 0.963,
+        "pat5_numerator": 3,
+        "pat5_denominator": 5,
+        "pat5_ratio": "3/5",
+        "p_at_5": 0.6,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "held_06",
+        "query": "vls media",
+        "type": "typo",
+        "is_unknown": false,
+        "returned_slugs": [
+          "vlc",
+          "kodi",
+          "jellyfin",
+          "mpv"
+        ],
+        "grades": [
+          3,
+          2,
+          0,
+          2
+        ],
+        "ideal_grades": [
+          3,
+          2,
+          2,
+          1
+        ],
+        "actual_dcg": 10.1848,
+        "ideal_dcg": 10.8235,
+        "ndcg_at_5": 0.941,
+        "pat5_numerator": 3,
+        "pat5_denominator": 4,
+        "pat5_ratio": "3/4",
+        "p_at_5": 0.75,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "held_07",
+        "query": "obz studio recorder",
+        "type": "typo",
+        "is_unknown": false,
+        "returned_slugs": [
+          "obs-studio",
+          "audacity",
+          "sharex",
+          "ardour",
+          "krita"
+        ],
+        "grades": [
+          3,
+          0,
+          2,
+          0,
+          0
+        ],
+        "ideal_grades": [
+          3,
+          2,
+          1
+        ],
+        "actual_dcg": 8.5,
+        "ideal_dcg": 9.3928,
+        "ndcg_at_5": 0.9049,
+        "pat5_numerator": 2,
+        "pat5_denominator": 5,
+        "pat5_ratio": "2/5",
+        "p_at_5": 0.4,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "held_08",
+        "query": "photo manager on linux",
+        "type": "platform_constraint",
+        "is_unknown": false,
+        "returned_slugs": [
+          "darktable",
+          "immich",
+          "gimp",
+          "rawtherapee",
+          "blender"
+        ],
+        "grades": [
+          3,
+          3,
+          2,
+          2,
+          0
+        ],
+        "ideal_grades": [
+          3,
+          3,
+          2,
+          2
+        ],
+        "actual_dcg": 14.2085,
+        "ideal_dcg": 14.2085,
+        "ndcg_at_5": 1.0,
+        "pat5_numerator": 4,
+        "pat5_denominator": 5,
+        "pat5_ratio": "4/5",
+        "p_at_5": 0.8,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "held_09",
+        "query": "lzma compression tool",
+        "type": "specific_task",
+        "is_unknown": false,
+        "returned_slugs": [
+          "7-zip",
+          "peazip",
+          "kopia",
+          "handbrake",
+          "borgbackup"
+        ],
+        "grades": [
+          3,
+          3,
+          0,
+          0,
+          0
+        ],
+        "ideal_grades": [
+          3,
+          3
+        ],
+        "actual_dcg": 11.4165,
+        "ideal_dcg": 11.4165,
+        "ndcg_at_5": 1.0,
+        "pat5_numerator": 2,
+        "pat5_denominator": 5,
+        "pat5_ratio": "2/5",
+        "p_at_5": 0.4,
+        "task_success": true,
+        "ndcg_match": true,
+        "pat5_match": true,
+        "task_match": true
+      },
+      {
+        "id": "held_10",
+        "query": "astrological telepathic crystal tuning",
+        "type": "unknown_query",
+        "is_unknown": true,
+        "returned_count": 0,
+        "passed": true,
+        "ratio": "1/1"
+      }
+    ],
+    "aggregates": {
+      "eligible_queries": 9,
+      "unknown_queries": 1,
+      "mean_ndcg_recomputed": 0.8864,
+      "mean_ndcg_reported": 0.89,
+      "mean_pat5_recomputed": 0.713,
+      "mean_pat5_reported": 0.71,
+      "pooled_pat5": 0.6471,
+      "pooled_pat5_num": 22,
+      "pooled_pat5_denom": 34,
+      "task_success_rate_recomputed": 1.0,
+      "task_success_rate_reported": 1.0,
+      "task_success_num": 9,
+      "task_success_denom": 9,
+      "unknown_accuracy_recomputed": 1.0,
+      "unknown_accuracy_reported": 1.0,
+      "unknown_accuracy_num": 1,
+      "unknown_accuracy_denom": 1
+    }
+  }
+}

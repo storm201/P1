@@ -42,6 +42,9 @@ def test_encoder_identity_and_independence():
     norm = sum(x*x for x in v1) ** 0.5
     assert abs(norm - 1.0) < 1e-4
 
+    # Restore configured encoder
+    initialize_encoder(settings.SEMANTIC_ENCODER_TYPE)
+
 
 def test_neural_mode_reporting_and_initialization_failure():
     """Required Test 18: Semantic mode accurately reports when genuine neural embeddings are active or failed."""
@@ -60,22 +63,26 @@ def test_neural_mode_reporting_and_initialization_failure():
         assert diag["status"] == "active"
         assert diag["is_genuine_neural"] is True
 
-    # Restore deterministic test encoder for remainder of suite
-    initialize_encoder("deterministic_test")
+    # Restore configured encoder for remainder of suite
+    initialize_encoder(settings.SEMANTIC_ENCODER_TYPE)
 
 
 def test_incompatible_model_rejection():
     """Required Test 19: Verify changing the embedding model cannot mix incompatible vectors."""
     db = SessionLocal()
     try:
+        sample = db.query(SearchDocument).first()
+        current_model = sample.model_name if sample else "current-model"
+        current_dim = sample.embedding_dim if sample else 384
+
         # 1. Dimension mismatch
-        bad_dim_encoder = DeterministicFakeEncoder(dim=512, model_name="deterministic-hash-v1")
+        bad_dim_encoder = DeterministicFakeEncoder(dim=current_dim + 128, model_name=current_model)
         with pytest.raises(IncompatibleEmbeddingModelError) as exc_dim:
             assert_embedding_compatibility(db, bad_dim_encoder)
         assert "Embedding model mismatch detected" in str(exc_dim.value)
 
         # 2. Model name mismatch
-        bad_model_encoder = DeterministicFakeEncoder(dim=384, model_name="different-neural-model-v2")
+        bad_model_encoder = DeterministicFakeEncoder(dim=current_dim, model_name="different-incompatible-model-v2")
         with pytest.raises(IncompatibleEmbeddingModelError) as exc_name:
             assert_embedding_compatibility(db, bad_model_encoder)
         assert "Embedding model mismatch detected" in str(exc_name.value)
