@@ -1,10 +1,37 @@
+# Environments and Secrets
+.env
+*.env
+.env.*
+!.env.example
+backend/.env
+backend/.env.*
+!backend/.env.example
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+
+# Runtime SQLite Databases and local data
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+backend/oss_discovery.db
+backend/*.db
+backend/*.sqlite
+
+# Python virtual environments & packages
 venv/
 backend/venv/
-node_modules/
-frontend/node_modules/
+.venv/
 **/__pycache__/
 *.pyc
 **/*.pyc
 .pytest_cache/
-*.log
 
+# Node dependencies
+node_modules/
+frontend/node_modules/
+
+# Logs and runtime outputs
+*.log
+backend/*.log

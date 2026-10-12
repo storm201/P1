@@ -6,9 +6,9 @@ services:
     container_name: oss_discovery_db
     restart: unless-stopped
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgrespassword
-      POSTGRES_DB: oss_discovery
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-change_me_in_production_db_password}
+      POSTGRES_DB: ${POSTGRES_DB:-oss_discovery}
     ports:
       - "5432:5432"
     volumes:
@@ -29,8 +29,8 @@ services:
       db:
         condition: service_healthy
     environment:
-      DATABASE_URL: postgresql+psycopg2://postgres:postgrespassword@db:5432/oss_discovery
-      OPS_TOKEN: dev-ops-token-secret
+      DATABASE_URL: ${DATABASE_URL:-postgresql+psycopg2://postgres:${POSTGRES_PASSWORD:-change_me_in_production_db_password}@db:5432/oss_discovery}
+      OPS_TOKEN: ${OPS_TOKEN:-replace_with_secure_random_operator_token}
       API_V1_PREFIX: /api/v1
     ports:
       - "8000:8000"
@@ -45,8 +45,8 @@ services:
       backend:
         condition: service_started
     environment:
-      DATABASE_URL: postgresql+psycopg2://postgres:postgrespassword@db:5432/oss_discovery
-      OPS_TOKEN: dev-ops-token-secret
+      DATABASE_URL: ${DATABASE_URL:-postgresql+psycopg2://postgres:${POSTGRES_PASSWORD:-change_me_in_production_db_password}@db:5432/oss_discovery}
+      OPS_TOKEN: ${OPS_TOKEN:-replace_with_secure_random_operator_token}
     command: ["python", "-m", "app.worker.worker"]
 
   frontend:

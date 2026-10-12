@@ -150,9 +150,17 @@ ALERT_FAILURE_THRESHOLD=3
 - **Neural Hybrid vs. Lexical Fallback Comparison**: Validated that while genuine neural vector search actively contributes to ranking (e.g., retrieving semantically aligned apps in multi-word queries), the underlying lexical + taxonomy precision architecture independently guarantees top-tier discovery performance across all evaluation benchmarks.
 - **Zero Fabrication**: 100% unknown query accuracy maintained across all modes.
 
+### 8. Repository Hygiene, Secret Rotation & Privacy Protection
+- **Secrets Management**: Untracked all environment files (`.env`, `backend/.env`) and runtime databases (`*.db`, `backend/oss_discovery.db`) from Git.
+- **Credential Rotation**: Rotated the exposed operator token (`OPS_TOKEN`) using a high-entropy cryptographically secure random secret, stored exclusively in local development configuration and deployment secrets.
+- **Safe Environment Templates**: Added `.env.example` and `backend/.env.example` containing non-sensitive parameter templates and placeholders.
+- **Personal Information & Runtime Data Protection**: Sanitized local database records; verified that application data is generated dynamically from verified seed files (`seed_catalog.json` and `taxonomy.json`) without tracking runtime operational jobs or user contact emails.
+- **Docker Compose Parameterization**: Replaced embedded default secrets in `docker-compose.yml` with environment variable interpolation (`${OPS_TOKEN}`, `${POSTGRES_PASSWORD}`).
+
 ---
 
 ## 🧪 Automated Test Suite (60 Tests, 100% Pass)
+
 
 Run all tests:
 ```powershell
